@@ -1,0 +1,2745 @@
+name: Endpoints
+description: ''
+endpoints:
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/products
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '[{"id":1,"name":"Lapiz #10","description":"Eius et animi quos velit et.","price":"6.00","stock":14,"category":"prod","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-29T21:13:06.000000Z"},{"id":2,"name":"Hojas opalina","description":"Paquete de 100 hojas opalina","price":"120.00","stock":50,"category":"paper","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-23T17:02:53.000000Z"},{"id":3,"name":"Velas decorativas","description":"Velas para cumplea\u00f1os","price":"25.00","stock":200,"category":"decor","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-23T17:02:53.000000Z"},{"id":5,"name":"Lapiz #2","description":"Eius et animi quos velit et.","price":"6.00","stock":14,"category":"prod","created_at":"2025-12-29T21:12:46.000000Z","updated_at":"2025-12-29T21:12:46.000000Z"}]'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/products
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        custom: []
+        name: name
+        description: 'The name of the product.'
+        required: true
+        example: 'Lapiz #2'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      description:
+        custom: []
+        name: description
+        description: 'The description of the product.'
+        required: false
+        example: 'Eius et animi quos velit et.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      price:
+        custom: []
+        name: price
+        description: 'The price of the product.'
+        required: true
+        example: 6.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      stock:
+        custom: []
+        name: stock
+        description: 'The stock quantity of the product.'
+        required: true
+        example: 14
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      category:
+        custom: []
+        name: category
+        description: 'The category of the product.'
+        required: false
+        example: prod
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+    cleanBodyParameters:
+      name: 'Lapiz #2'
+      description: 'Eius et animi quos velit et.'
+      price: 6.0
+      stock: 14
+      category: prod
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/products/{id}'
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the product.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"id":1,"name":"Lapiz #10","description":"Eius et animi quos velit et.","price":"6.00","stock":14,"category":"prod","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-29T21:13:06.000000Z","bundle_items":[]}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/products/{id}'
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the product.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        custom: []
+        name: name
+        description: 'The name of the product.'
+        required: true
+        example: 'Lapiz #2'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      description:
+        custom: []
+        name: description
+        description: 'The description of the product.'
+        required: false
+        example: 'Eius et animi quos velit et.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      price:
+        custom: []
+        name: price
+        description: 'The price of the product.'
+        required: true
+        example: 6.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      stock:
+        custom: []
+        name: stock
+        description: 'The stock quantity of the product.'
+        required: true
+        example: 14
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      category:
+        custom: []
+        name: category
+        description: 'The category of the product.'
+        required: false
+        example: prod
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+    cleanBodyParameters:
+      name: 'Lapiz #2'
+      description: 'Eius et animi quos velit et.'
+      price: 6.0
+      stock: 14
+      category: prod
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - DELETE
+    uri: 'api/products/{id}'
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the product.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/services
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '[{"id":1,"name":"Impresion","description":"Servicios de impresion de documentos","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-30T04:45:42.000000Z","pricing_rules":[{"id":1,"service_id":1,"condition_type":"quantity","condition_value":"architecto","min_quantity":10,"max_quantity":100,"material":"glossy","size":"architecto","doc_type":"architecto","price":"50.00","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-29T17:25:12.000000Z"},{"id":2,"service_id":1,"condition_type":"quantity","condition_value":null,"min_quantity":1,"max_quantity":100,"material":null,"size":null,"doc_type":null,"price":"4.00","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-23T17:02:53.000000Z"},{"id":3,"service_id":1,"condition_type":"quantity","condition_value":null,"min_quantity":101,"max_quantity":null,"material":null,"size":null,"doc_type":null,"price":"2.50","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-23T17:02:53.000000Z"},{"id":4,"service_id":1,"condition_type":"material","condition_value":null,"min_quantity":null,"max_quantity":null,"material":"opalina","size":null,"doc_type":null,"price":"5.00","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-23T17:02:53.000000Z"}],"consumables":[{"id":2,"service_id":1,"product_id":2,"units_per_service":"1.000","material":"opalina","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-23T17:02:53.000000Z"}]},{"id":2,"name":"Enmicado","description":"Protecci\u00f3n de documentos en mica","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-23T17:02:53.000000Z","pricing_rules":[],"consumables":[{"id":1,"service_id":2,"product_id":2,"units_per_service":"2.000","material":"glossy","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-29T18:01:08.000000Z"}]},{"id":3,"name":"Engargolado","description":"Engargolado de hojas con espiral","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-23T17:02:53.000000Z","pricing_rules":[{"id":5,"service_id":3,"condition_type":"quantity","condition_value":null,"min_quantity":30,"max_quantity":30,"material":null,"size":null,"doc_type":null,"price":"20.00","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-23T17:02:53.000000Z"},{"id":6,"service_id":3,"condition_type":"quantity","condition_value":null,"min_quantity":31,"max_quantity":70,"material":null,"size":null,"doc_type":null,"price":"25.00","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-23T17:02:53.000000Z"}],"consumables":[]},{"id":4,"name":"architecto","description":"Eius et animi quos velit et.","created_at":"2025-12-30T04:45:45.000000Z","updated_at":"2025-12-30T04:45:45.000000Z","pricing_rules":[],"consumables":[]},{"id":5,"name":"architecto","description":"Eius et animi quos velit et.","created_at":"2025-12-30T04:45:54.000000Z","updated_at":"2025-12-30T04:45:54.000000Z","pricing_rules":[],"consumables":[]}]'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/services
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        custom: []
+        name: name
+        description: 'The name of the service.'
+        required: true
+        example: Impresion
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      description:
+        custom: []
+        name: description
+        description: 'The description of the service.'
+        required: false
+        example: 'Servicio de impresion de documentos'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+    cleanBodyParameters:
+      name: Impresion
+      description: 'Servicio de impresion de documentos'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/services/{id}'
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the service.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"id":1,"name":"Impresion","description":"Servicios de impresion de documentos","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-30T04:45:42.000000Z","pricing_rules":[{"id":1,"service_id":1,"condition_type":"quantity","condition_value":"architecto","min_quantity":10,"max_quantity":100,"material":"glossy","size":"architecto","doc_type":"architecto","price":"50.00","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-29T17:25:12.000000Z"},{"id":2,"service_id":1,"condition_type":"quantity","condition_value":null,"min_quantity":1,"max_quantity":100,"material":null,"size":null,"doc_type":null,"price":"4.00","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-23T17:02:53.000000Z"},{"id":3,"service_id":1,"condition_type":"quantity","condition_value":null,"min_quantity":101,"max_quantity":null,"material":null,"size":null,"doc_type":null,"price":"2.50","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-23T17:02:53.000000Z"},{"id":4,"service_id":1,"condition_type":"material","condition_value":null,"min_quantity":null,"max_quantity":null,"material":"opalina","size":null,"doc_type":null,"price":"5.00","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-23T17:02:53.000000Z"}],"consumables":[{"id":2,"service_id":1,"product_id":2,"units_per_service":"1.000","material":"opalina","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-23T17:02:53.000000Z"}],"bundle_items":[{"id":5,"bundle_id":3,"item_type":"App\\Models\\Service","item_id":1,"quantity":2,"created_at":"2025-12-29T21:02:53.000000Z","updated_at":"2025-12-29T21:02:53.000000Z"}]}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/services/{id}'
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the service.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        custom: []
+        name: name
+        description: 'The name of the service.'
+        required: true
+        example: Impresion
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      description:
+        custom: []
+        name: description
+        description: 'The description of the service.'
+        required: false
+        example: 'Servicio de impresion de documentos'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+    cleanBodyParameters:
+      name: Impresion
+      description: 'Servicio de impresion de documentos'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - DELETE
+    uri: 'api/services/{id}'
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the service.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/service-pricing-rules
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '[{"id":1,"service_id":1,"condition_type":"quantity","condition_value":"architecto","min_quantity":10,"max_quantity":100,"material":"glossy","size":"architecto","doc_type":"architecto","price":"50.00","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-29T17:25:12.000000Z","service":{"id":1,"name":"Impresion","description":"Servicios de impresion de documentos","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-30T04:45:42.000000Z"}},{"id":2,"service_id":1,"condition_type":"quantity","condition_value":null,"min_quantity":1,"max_quantity":100,"material":null,"size":null,"doc_type":null,"price":"4.00","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-23T17:02:53.000000Z","service":{"id":1,"name":"Impresion","description":"Servicios de impresion de documentos","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-30T04:45:42.000000Z"}},{"id":3,"service_id":1,"condition_type":"quantity","condition_value":null,"min_quantity":101,"max_quantity":null,"material":null,"size":null,"doc_type":null,"price":"2.50","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-23T17:02:53.000000Z","service":{"id":1,"name":"Impresion","description":"Servicios de impresion de documentos","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-30T04:45:42.000000Z"}},{"id":4,"service_id":1,"condition_type":"material","condition_value":null,"min_quantity":null,"max_quantity":null,"material":"opalina","size":null,"doc_type":null,"price":"5.00","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-23T17:02:53.000000Z","service":{"id":1,"name":"Impresion","description":"Servicios de impresion de documentos","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-30T04:45:42.000000Z"}},{"id":5,"service_id":3,"condition_type":"quantity","condition_value":null,"min_quantity":30,"max_quantity":30,"material":null,"size":null,"doc_type":null,"price":"20.00","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-23T17:02:53.000000Z","service":{"id":3,"name":"Engargolado","description":"Engargolado de hojas con espiral","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-23T17:02:53.000000Z"}},{"id":6,"service_id":3,"condition_type":"quantity","condition_value":null,"min_quantity":31,"max_quantity":70,"material":null,"size":null,"doc_type":null,"price":"25.00","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-23T17:02:53.000000Z","service":{"id":3,"name":"Engargolado","description":"Engargolado de hojas con espiral","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-23T17:02:53.000000Z"}}]'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/service-pricing-rules
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      service_id:
+        custom: []
+        name: service_id
+        description: 'The ID of the service.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      condition_type:
+        custom: []
+        name: condition_type
+        description: 'The type of condition for the pricing rule.'
+        required: true
+        example: quantity
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      price:
+        custom: []
+        name: price
+        description: 'The price associated with the pricing rule.'
+        required: true
+        example: 50.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      min_quantity:
+        custom: []
+        name: min_quantity
+        description: 'The minimum quantity for the pricing rule.'
+        required: false
+        example: 10
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+      max_quantity:
+        custom: []
+        name: max_quantity
+        description: 'The maximum quantity for the pricing rule.'
+        required: false
+        example: 100
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+      material:
+        custom: []
+        name: material
+        description: 'The material associated with the pricing rule.'
+        required: false
+        example: glossy
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+    cleanBodyParameters:
+      service_id: 1
+      condition_type: quantity
+      price: 50.0
+      min_quantity: 10
+      max_quantity: 100
+      material: glossy
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/service-pricing-rules/{id}'
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the service pricing rule.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"id":1,"service_id":1,"condition_type":"quantity","condition_value":"architecto","min_quantity":10,"max_quantity":100,"material":"glossy","size":"architecto","doc_type":"architecto","price":"50.00","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-29T17:25:12.000000Z","service":{"id":1,"name":"Impresion","description":"Servicios de impresion de documentos","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-30T04:45:42.000000Z"}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/service-pricing-rules/{id}'
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the service pricing rule.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      service_id:
+        custom: []
+        name: service_id
+        description: 'The ID of the service.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      condition_type:
+        custom: []
+        name: condition_type
+        description: 'The type of condition for the pricing rule.'
+        required: true
+        example: quantity
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+      condition_value:
+        custom: []
+        name: condition_value
+        description: ''
+        required: false
+        example: architecto
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      min_quantity:
+        custom: []
+        name: min_quantity
+        description: 'The minimum quantity for the pricing rule.'
+        required: false
+        example: 10
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+      max_quantity:
+        custom: []
+        name: max_quantity
+        description: 'The maximum quantity for the pricing rule.'
+        required: false
+        example: 100
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+      material:
+        custom: []
+        name: material
+        description: 'The material associated with the pricing rule.'
+        required: false
+        example: glossy
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+      size:
+        custom: []
+        name: size
+        description: ''
+        required: false
+        example: architecto
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      doc_type:
+        custom: []
+        name: doc_type
+        description: ''
+        required: false
+        example: architecto
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      price:
+        custom: []
+        name: price
+        description: 'The price associated with the pricing rule.'
+        required: true
+        example: 50.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      service_id: 1
+      condition_type: quantity
+      condition_value: architecto
+      min_quantity: 10
+      max_quantity: 100
+      material: glossy
+      size: architecto
+      doc_type: architecto
+      price: 50.0
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - DELETE
+    uri: 'api/service-pricing-rules/{id}'
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the service pricing rule.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/service-consumables
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '[{"id":1,"service_id":2,"product_id":2,"units_per_service":"2.000","material":"glossy","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-29T18:01:08.000000Z","service":{"id":2,"name":"Enmicado","description":"Protecci\u00f3n de documentos en mica","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-23T17:02:53.000000Z"},"product":{"id":2,"name":"Hojas opalina","description":"Paquete de 100 hojas opalina","price":"120.00","stock":50,"category":"paper","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-23T17:02:53.000000Z"}},{"id":2,"service_id":1,"product_id":2,"units_per_service":"1.000","material":"opalina","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-23T17:02:53.000000Z","service":{"id":1,"name":"Impresion","description":"Servicios de impresion de documentos","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-30T04:45:42.000000Z"},"product":{"id":2,"name":"Hojas opalina","description":"Paquete de 100 hojas opalina","price":"120.00","stock":50,"category":"paper","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-23T17:02:53.000000Z"}}]'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/service-consumables
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      service_id:
+        custom: []
+        name: service_id
+        description: 'The ID of the service.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      product_id:
+        custom: []
+        name: product_id
+        description: 'The ID of the product.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      units_per_service:
+        custom: []
+        name: units_per_service
+        description: 'The number of units of the product consumed per service.'
+        required: true
+        example: 2
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      material:
+        custom: []
+        name: material
+        description: 'The material associated with the consumable.'
+        required: false
+        example: glossy
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+    cleanBodyParameters:
+      service_id: 1
+      product_id: 1
+      units_per_service: 2
+      material: glossy
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/service-consumables/{id}'
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the service consumable.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"id":1,"service_id":2,"product_id":2,"units_per_service":"2.000","material":"glossy","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-29T18:01:08.000000Z","service":{"id":2,"name":"Enmicado","description":"Protecci\u00f3n de documentos en mica","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-23T17:02:53.000000Z"},"product":{"id":2,"name":"Hojas opalina","description":"Paquete de 100 hojas opalina","price":"120.00","stock":50,"category":"paper","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-23T17:02:53.000000Z"}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/service-consumables/{id}'
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the service consumable.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      service_id:
+        custom: []
+        name: service_id
+        description: 'The ID of the service.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      product_id:
+        custom: []
+        name: product_id
+        description: 'The ID of the product.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      units_per_service:
+        custom: []
+        name: units_per_service
+        description: 'The number of units of the product consumed per service.'
+        required: true
+        example: 2
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      material:
+        custom: []
+        name: material
+        description: 'The material associated with the consumable.'
+        required: false
+        example: glossy
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+    cleanBodyParameters:
+      service_id: 1
+      product_id: 1
+      units_per_service: 2
+      material: glossy
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - DELETE
+    uri: 'api/service-consumables/{id}'
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the service consumable.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/bundles
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '[{"id":3,"name":"Dia de la Madre","description":"Paquete especial para el Dia de la Madre","created_at":"2025-12-29T20:33:37.000000Z","updated_at":"2025-12-29T21:02:53.000000Z","items":[{"id":5,"bundle_id":3,"item_type":"App\\Models\\Service","item_id":1,"quantity":2,"created_at":"2025-12-29T21:02:53.000000Z","updated_at":"2025-12-29T21:02:53.000000Z","item":{"id":1,"name":"Impresion","description":"Servicios de impresion de documentos","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-30T04:45:42.000000Z"}}]}]'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/bundles
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        custom: []
+        name: name
+        description: 'The name of the bundle.'
+        required: true
+        example: 'Dia del Padre'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      description:
+        custom: []
+        name: description
+        description: 'The description of the bundle.'
+        required: false
+        example: 'Paquete especial para el Dia del Padre'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+    cleanBodyParameters:
+      name: 'Dia del Padre'
+      description: 'Paquete especial para el Dia del Padre'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/bundles/{id}'
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the bundle.'
+        required: true
+        example: 3
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 3
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"id":3,"name":"Dia de la Madre","description":"Paquete especial para el Dia de la Madre","created_at":"2025-12-29T20:33:37.000000Z","updated_at":"2025-12-29T21:02:53.000000Z","items":[{"id":5,"bundle_id":3,"item_type":"App\\Models\\Service","item_id":1,"quantity":2,"created_at":"2025-12-29T21:02:53.000000Z","updated_at":"2025-12-29T21:02:53.000000Z","item":{"id":1,"name":"Impresion","description":"Servicios de impresion de documentos","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-30T04:45:42.000000Z"}}]}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/bundles/{id}'
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the bundle.'
+        required: true
+        example: 3
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 3
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        custom: []
+        name: name
+        description: 'The name of the bundle.'
+        required: true
+        example: 'Dia de la Madre'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      description:
+        custom: []
+        name: description
+        description: 'The description of the bundle.'
+        required: false
+        example: 'Paquete especial para el Dia de la Madre'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+    cleanBodyParameters:
+      name: 'Dia de la Madre'
+      description: 'Paquete especial para el Dia de la Madre'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - DELETE
+    uri: 'api/bundles/{id}'
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the bundle.'
+        required: true
+        example: 3
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 3
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/bundle-items
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '[{"id":5,"bundle_id":3,"item_type":"App\\Models\\Service","item_id":1,"quantity":2,"created_at":"2025-12-29T21:02:53.000000Z","updated_at":"2025-12-29T21:02:53.000000Z","bundle":{"id":3,"name":"Dia de la Madre","description":"Paquete especial para el Dia de la Madre","created_at":"2025-12-29T20:33:37.000000Z","updated_at":"2025-12-29T21:02:53.000000Z"},"item":{"id":1,"name":"Impresion","description":"Servicios de impresion de documentos","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-30T04:45:42.000000Z"}}]'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/bundle-items
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      bundle_id:
+        custom: []
+        name: bundle_id
+        description: 'The ID of the bundle.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      item_type:
+        custom: []
+        name: item_type
+        description: 'The type of the item.'
+        required: true
+        example: App\Models\Product
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      item_id:
+        custom: []
+        name: item_id
+        description: 'The ID of the item.'
+        required: true
+        example: 2
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      quantity:
+        custom: []
+        name: quantity
+        description: 'The quantity of the item in the bundle.'
+        required: true
+        example: 3
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      bundle_id: 1
+      item_type: App\Models\Product
+      item_id: 2
+      quantity: 3
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/bundle-items/{id}'
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the bundle item.'
+        required: true
+        example: 5
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 5
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"id":5,"bundle_id":3,"item_type":"App\\Models\\Service","item_id":1,"quantity":2,"created_at":"2025-12-29T21:02:53.000000Z","updated_at":"2025-12-29T21:02:53.000000Z","bundle":{"id":3,"name":"Dia de la Madre","description":"Paquete especial para el Dia de la Madre","created_at":"2025-12-29T20:33:37.000000Z","updated_at":"2025-12-29T21:02:53.000000Z"},"item":{"id":1,"name":"Impresion","description":"Servicios de impresion de documentos","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-30T04:45:42.000000Z"}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/bundle-items/{id}'
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the bundle item.'
+        required: true
+        example: 5
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 5
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      bundle_id:
+        custom: []
+        name: bundle_id
+        description: 'The ID of the bundle.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      item_type:
+        custom: []
+        name: item_type
+        description: 'The type of the item.'
+        required: true
+        example: App\Models\Product
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      item_id:
+        custom: []
+        name: item_id
+        description: 'The ID of the item.'
+        required: true
+        example: 2
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      quantity:
+        custom: []
+        name: quantity
+        description: 'The quantity of the item in the bundle.'
+        required: true
+        example: 3
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      bundle_id: 1
+      item_type: App\Models\Product
+      item_id: 2
+      quantity: 3
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - DELETE
+    uri: 'api/bundle-items/{id}'
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the bundle item.'
+        required: true
+        example: 5
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 5
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/customers
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '[{"id":1,"name":"Juan P\u00e9rez","phone":"555-1234","email":"juan@example.com","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-23T17:02:53.000000Z","orders":[{"id":1,"customer_id":1,"total":"100.00","status":"pending","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-23T17:02:53.000000Z"}]},{"id":2,"name":"Mar\u00eda L\u00f3pez","phone":"555-5678","email":"maria@example.com","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-23T17:02:53.000000Z","orders":[{"id":2,"customer_id":2,"total":"200.00","status":"completed","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-23T17:02:53.000000Z"}]}]'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/customers
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        custom: []
+        name: name
+        description: 'The name of the customer.'
+        required: true
+        example: 'Juan Perez'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      phone:
+        custom: []
+        name: phone
+        description: 'The phone number of the customer.'
+        required: false
+        example: '+1234567890'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+      email:
+        custom: []
+        name: email
+        description: 'The email address of the customer.'
+        required: false
+        example: juanperez@mail.com
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+    cleanBodyParameters:
+      name: 'Juan Perez'
+      phone: '+1234567890'
+      email: juanperez@mail.com
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/customers/{id}'
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the customer.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"id":1,"name":"Juan P\u00e9rez","phone":"555-1234","email":"juan@example.com","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-23T17:02:53.000000Z","orders":[{"id":1,"customer_id":1,"total":"100.00","status":"pending","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-23T17:02:53.000000Z"}]}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/customers/{id}'
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the customer.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        custom: []
+        name: name
+        description: 'The name of the customer.'
+        required: true
+        example: 'Juan Perez 2'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      phone:
+        custom: []
+        name: phone
+        description: 'The phone number of the customer.'
+        required: false
+        example: '+1234567890'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+      email:
+        custom: []
+        name: email
+        description: 'The email address of the customer.'
+        required: false
+        example: juanperez2@mail.com
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+    cleanBodyParameters:
+      name: 'Juan Perez 2'
+      phone: '+1234567890'
+      email: juanperez2@mail.com
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - DELETE
+    uri: 'api/customers/{id}'
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the customer.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/orders
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '[{"id":1,"customer_id":1,"total":"100.00","status":"pending","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-23T17:02:53.000000Z","customer":{"id":1,"name":"Juan P\u00e9rez","phone":"555-1234","email":"juan@example.com","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-23T17:02:53.000000Z"},"items":[{"id":1,"order_id":1,"item_type":"App\\Models\\Product","item_id":1,"quantity":1,"unit_price":"80.00","meta":null,"created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-23T17:02:53.000000Z","item":{"id":1,"name":"Lapiz #10","description":"Eius et animi quos velit et.","price":"6.00","stock":14,"category":"prod","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-29T21:13:06.000000Z"}}]},{"id":2,"customer_id":2,"total":"200.00","status":"completed","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-23T17:02:53.000000Z","customer":{"id":2,"name":"Mar\u00eda L\u00f3pez","phone":"555-5678","email":"maria@example.com","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-23T17:02:53.000000Z"},"items":[{"id":2,"order_id":2,"item_type":"App\\Models\\Service","item_id":1,"quantity":50,"unit_price":"4.00","meta":null,"created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-23T17:02:53.000000Z","item":{"id":1,"name":"Impresion","description":"Servicios de impresion de documentos","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-30T04:45:42.000000Z"}}]}]'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/orders
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      customer_id:
+        custom: []
+        name: customer_id
+        description: 'The ID of the customer placing the order.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      total:
+        custom: []
+        name: total
+        description: 'The total amount of the order.'
+        required: false
+        example: 150.75
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+      status:
+        custom: []
+        name: status
+        description: 'The status of the order.'
+        required: false
+        example: pending
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+    cleanBodyParameters:
+      customer_id: 1
+      total: 150.75
+      status: pending
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/orders/{id}'
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the order.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"id":1,"customer_id":1,"total":"100.00","status":"pending","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-23T17:02:53.000000Z","customer":{"id":1,"name":"Juan P\u00e9rez","phone":"555-1234","email":"juan@example.com","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-23T17:02:53.000000Z"},"items":[{"id":1,"order_id":1,"item_type":"App\\Models\\Product","item_id":1,"quantity":1,"unit_price":"80.00","meta":null,"created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-23T17:02:53.000000Z","item":{"id":1,"name":"Lapiz #10","description":"Eius et animi quos velit et.","price":"6.00","stock":14,"category":"prod","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-29T21:13:06.000000Z"}}]}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/orders/{id}'
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the order.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      customer_id:
+        custom: []
+        name: customer_id
+        description: 'The ID of the customer placing the order.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      total:
+        custom: []
+        name: total
+        description: 'The total amount of the order.'
+        required: false
+        example: 150.75
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+      status:
+        custom: []
+        name: status
+        description: 'The status of the order.'
+        required: false
+        example: pending
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+    cleanBodyParameters:
+      customer_id: 1
+      total: 150.75
+      status: pending
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - DELETE
+    uri: 'api/orders/{id}'
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the order.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/order-items
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '[{"id":1,"order_id":1,"item_type":"App\\Models\\Product","item_id":1,"quantity":1,"unit_price":"80.00","meta":null,"created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-23T17:02:53.000000Z","order":{"id":1,"customer_id":1,"total":"100.00","status":"pending","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-23T17:02:53.000000Z"},"item":{"id":1,"name":"Lapiz #10","description":"Eius et animi quos velit et.","price":"6.00","stock":14,"category":"prod","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-29T21:13:06.000000Z"}},{"id":2,"order_id":2,"item_type":"App\\Models\\Service","item_id":1,"quantity":50,"unit_price":"4.00","meta":null,"created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-23T17:02:53.000000Z","order":{"id":2,"customer_id":2,"total":"200.00","status":"completed","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-23T17:02:53.000000Z"},"item":{"id":1,"name":"Impresion","description":"Servicios de impresion de documentos","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-30T04:45:42.000000Z"}}]'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/order-items
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      order_id:
+        custom: []
+        name: order_id
+        description: 'The ID of the order.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      item_type:
+        custom: []
+        name: item_type
+        description: 'The type of the item.'
+        required: true
+        example: App\Models\Product
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      item_id:
+        custom: []
+        name: item_id
+        description: 'The ID of the item.'
+        required: true
+        example: 2
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      quantity:
+        custom: []
+        name: quantity
+        description: 'The quantity of the item in the order.'
+        required: true
+        example: 3
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      unit_price:
+        custom: []
+        name: unit_price
+        description: 'The unit price of the item.'
+        required: true
+        example: 29.99
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      order_id: 1
+      item_type: App\Models\Product
+      item_id: 2
+      quantity: 3
+      unit_price: 29.99
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/order-items/{id}'
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the order item.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"id":1,"order_id":1,"item_type":"App\\Models\\Product","item_id":1,"quantity":1,"unit_price":"80.00","meta":null,"created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-23T17:02:53.000000Z","order":{"id":1,"customer_id":1,"total":"100.00","status":"pending","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-23T17:02:53.000000Z"},"item":{"id":1,"name":"Lapiz #10","description":"Eius et animi quos velit et.","price":"6.00","stock":14,"category":"prod","created_at":"2025-12-23T17:02:53.000000Z","updated_at":"2025-12-29T21:13:06.000000Z"}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/order-items/{id}'
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the order item.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      order_id:
+        custom: []
+        name: order_id
+        description: 'The <code>id</code> of an existing record in the orders table.'
+        required: true
+        example: architecto
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      item_type:
+        custom: []
+        name: item_type
+        description: ''
+        required: true
+        example: architecto
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      item_id:
+        custom: []
+        name: item_id
+        description: ''
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      quantity:
+        custom: []
+        name: quantity
+        description: 'Must be at least 1.'
+        required: true
+        example: 22
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      unit_price:
+        custom: []
+        name: unit_price
+        description: ''
+        required: true
+        example: 4326.41688
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      order_id: architecto
+      item_type: architecto
+      item_id: 16
+      quantity: 22
+      unit_price: 4326.41688
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - DELETE
+    uri: 'api/order-items/{id}'
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the order item.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null

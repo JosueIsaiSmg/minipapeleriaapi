@@ -6,20 +6,22 @@ use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
+use Database\Seeders\ProductSeeder;
+use Database\Seeders\ServiceSeeder;
+use Database\Seeders\ServicePricingRuleSeeder;
+use Database\Seeders\ServiceConsumableSeeder;
+use Database\Seeders\BundleSeeder;
+use Database\Seeders\BundleItemSeeder;
+use Database\Seeders\CustomerSeeder;
+use Database\Seeders\OrderSeeder;
+use Database\Seeders\OrderItemSeeder;
+
 class DatabaseSeeder extends Seeder
 {
     use WithoutModelEvents;
-
-    /**
-     * Seed the application's database.
-     */
+    
     public function run(): void
     {
-        // User::factory(10)->create();
-
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        $this->call([ProductSeeder::class, ServiceSeeder::class, ServicePricingRuleSeeder::class, ServiceConsumableSeeder::class, BundleSeeder::class, BundleItemSeeder::class, CustomerSeeder::class, OrderSeeder::class, OrderItemSeeder::class,]);
     }
 }
