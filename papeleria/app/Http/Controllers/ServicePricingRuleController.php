@@ -9,27 +9,22 @@ class ServicePricingRuleController extends Controller
 {
     public function index()
     {
-        return ServicePricingRule::with('service')->get();
+        return ServicePricingRule::query()
+            ->with('service')
+            ->latest()
+            ->get();
     }
 
     /**
      * @bodyParam service_id int required The ID of the service. Example: 1
-     * @bodyParam condition_type string required The type of condition for the pricing rule. Example: quantity
      * @bodyParam price float required The price associated with the pricing rule. Example: 50.00
      * @bodyParam min_quantity int The minimum quantity for the pricing rule. Example: 10
      * @bodyParam max_quantity int The maximum quantity for the pricing rule. Example: 100
-     * @bodyParam material string The material associated with the pricing rule. Example: glossy
+     * @bodyParam variant string Variante opcional de la regla. Example: opalina
      */
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'service_id' => 'required|exists:services,id',
-            'condition_type' => 'required|string',
-            'price' => 'required|numeric',
-            'min_quantity' => 'nullable|integer',
-            'max_quantity' => 'nullable|integer',
-            'material' => 'nullable|string',
-        ]);
+        $validated = $this->normalize($request->validate($this->rules()));
 
         $servicePricingRule = ServicePricingRule::create($validated);
         return $servicePricingRule->load('service');
@@ -42,15 +37,14 @@ class ServicePricingRuleController extends Controller
 
     /**
      * @bodyParam service_id int required The ID of the service. Example: 1
-     * @bodyParam condition_type string required The type of condition for the pricing rule. Example: quantity
      * @bodyParam price float required The price associated with the pricing rule. Example: 50.00
      * @bodyParam min_quantity int The minimum quantity for the pricing rule. Example: 10
      * @bodyParam max_quantity int The maximum quantity for the pricing rule. Example: 100
-     * @bodyParam material string The material associated with the pricing rule. Example: glossy
+     * @bodyParam variant string Variante opcional de la regla. Example: opalina
      */
     public function update(Request $request, ServicePricingRule $servicePricingRule)
     {
-        $validated = $request->validate(['service_id' => 'required|exists:services,id', 'condition_type' => 'nullable|string', 'condition_value' => 'nullable|string', 'min_quantity' => 'nullable|integer|min:1', 'max_quantity' => 'nullable|integer', 'material' => 'nullable|string', 'size' => 'nullable|string', 'doc_type' => 'nullable|string', 'price' => 'required|numeric|min:0',]);
+        $validated = $this->normalize($request->validate($this->rules()));
         $servicePricingRule->update($validated);
         return $servicePricingRule->load('service');
     }
@@ -59,5 +53,27 @@ class ServicePricingRuleController extends Controller
     {
         $servicePricingRule->delete();
         return response()->noContent();
+    }
+
+    protected function rules(): array
+    {
+        return [
+            'service_id' => 'required|exists:services,id',
+            'variant' => 'nullable|string|max:255',
+            'min_quantity' => 'nullable|integer|min:1',
+            'max_quantity' => 'nullable|integer|gte:min_quantity',
+            'price' => 'required|numeric|min:0',
+        ];
+    }
+
+    protected function normalize(array $validated): array
+    {
+        if (array_key_exists('variant', $validated)) {
+            $validated['variant'] = filled($validated['variant'])
+                ? trim((string) $validated['variant'])
+                : null;
+        }
+
+        return $validated;
     }
 }

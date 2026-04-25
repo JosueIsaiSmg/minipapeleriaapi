@@ -28,4 +28,9 @@ class Service extends Model
     {
         return $this->morphMany(BundleItem::class, 'item');
     }
+
+    public function variants()
+    {
+        return $this->morphMany(Variant::class, 'variantable');
+    }
 }

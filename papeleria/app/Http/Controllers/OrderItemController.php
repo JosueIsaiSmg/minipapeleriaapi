@@ -2,11 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\ItemType;
 use App\Models\OrderItem;
+use App\Services\OrderItemWorkflowService;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class OrderItemController extends Controller
 {
+    public function __construct(
+        protected OrderItemWorkflowService $workflow,
+    ) {}
+
     public function index()
     {
         return OrderItem::with('order','item')->get();
@@ -21,16 +28,8 @@ class OrderItemController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'order_id' => 'required|exists:orders,id',
-            'item_type' => 'required|string',
-            'item_id' => 'required|integer',
-            'quantity' => 'required|integer|min:1',
-            'unit_price' => 'required|numeric',
-        ]);
-
-        $orderItem = OrderItem::create($validated);
-        return $orderItem->load('order','item');
+        $validated = $request->validate($this->rules());
+        return $this->workflow->create($validated);
     }
 
     public function show(OrderItem $orderItem)
@@ -40,20 +39,27 @@ class OrderItemController extends Controller
 
     public function update(Request $request, OrderItem $orderItem)
     {
-        $validated = $request->validate([
-            'order_id' => 'required|exists:orders,id',
-            'item_type' => 'required|string',
-            'item_id' => 'required|integer',
-            'quantity' => 'required|integer|min:1',
-            'unit_price' => 'required|numeric',
-        ]);
-        $orderItem->update($validated);
-        return  $orderItem->load('order','item');
+        $validated = $request->validate($this->rules());
+        return $this->workflow->update($orderItem, $validated);
     }
 
     public function destroy(OrderItem $orderItem)
     {
-        $orderItem->delete();
+        $this->workflow->delete($orderItem);
+
         return response()->noContent();
+    }
+
+    protected function rules(): array
+    {
+        return [
+            'order_id' => 'required|exists:orders,id',
+            'item_type' => ['required', Rule::enum(ItemType::class)],
+            'item_id' => 'required|integer|min:1',
+            'quantity' => 'required|integer|min:1',
+            'unit_price' => 'nullable|numeric|min:0',
+            'meta' => 'nullable|array',
+            'meta.variant' => 'nullable|string|max:255',
+        ];
     }
 }

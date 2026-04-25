@@ -3,13 +3,18 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Service;
 
 class ServicePricingRule extends Model
 {
     protected $fillable = [
-        'service_id','condition_type','condition_value',
-        'min_quantity','max_quantity','material','size','doc_type','price'
+        'service_id', 'variant', 'min_quantity', 'max_quantity', 'price'
+    ];
+
+    protected $casts = [
+        'service_id' => 'integer',
+        'min_quantity' => 'integer',
+        'max_quantity' => 'integer',
+        'price' => 'float',
     ];
 
     public function service()

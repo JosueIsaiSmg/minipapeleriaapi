@@ -176,21 +176,6 @@
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-DELETEapi-customers--id-">
                                 <a href="#endpoints-DELETEapi-customers--id-">DELETE api/customers/{id}</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-orders">
-                                <a href="#endpoints-GETapi-orders">GET api/orders</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-orders">
-                                <a href="#endpoints-POSTapi-orders">POST api/orders</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-orders--id-">
-                                <a href="#endpoints-GETapi-orders--id-">GET api/orders/{id}</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-PUTapi-orders--id-">
-                                <a href="#endpoints-PUTapi-orders--id-">PUT api/orders/{id}</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-DELETEapi-orders--id-">
-                                <a href="#endpoints-DELETEapi-orders--id-">DELETE api/orders/{id}</a>
-                            </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-GETapi-order-items">
                                 <a href="#endpoints-GETapi-order-items">GET api/order-items</a>
                             </li>
@@ -208,6 +193,39 @@
                             </li>
                                                                         </ul>
                             </ul>
+                    <ul id="tocify-header-orders" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="orders">
+                    <a href="#orders">Orders</a>
+                </li>
+                                    <ul id="tocify-subheader-orders" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="orders-GETapi-orders">
+                                <a href="#orders-GETapi-orders">List orders
+
+Returns all orders with customer and item relationships loaded.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="orders-POSTapi-orders">
+                                <a href="#orders-POSTapi-orders">Create order
+
+Creates an order and optionally creates nested order items. If an item is a service,
+its price is resolved from pricing rules and product stock is discounted from related consumables.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="orders-GETapi-orders--id-">
+                                <a href="#orders-GETapi-orders--id-">Show order
+
+Returns a single order with customer and items.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="orders-PUTapi-orders--id-">
+                                <a href="#orders-PUTapi-orders--id-">Update order
+
+Updates order attributes. If `order_items` is sent, existing order items are replaced and stock is recalculated.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="orders-DELETEapi-orders--id-">
+                                <a href="#orders-DELETEapi-orders--id-">Delete order
+
+Deletes an order.</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
             </div>
 
     <ul class="toc-footer" id="toc-footer">
@@ -217,7 +235,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: December 31, 2025</li>
+        <li>Last updated: April 23, 2026</li>
     </ul>
 </div>
 
@@ -291,13 +309,13 @@ access-control-allow-origin: *
 <code class="language-json" style="max-height: 300px;">[
     {
         &quot;id&quot;: 1,
-        &quot;name&quot;: &quot;Lapiz #10&quot;,
-        &quot;description&quot;: &quot;Eius et animi quos velit et.&quot;,
-        &quot;price&quot;: &quot;6.00&quot;,
-        &quot;stock&quot;: 14,
-        &quot;category&quot;: &quot;prod&quot;,
-        &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2025-12-29T21:13:06.000000Z&quot;
+        &quot;name&quot;: &quot;Hojas blancas tama&ntilde;o carta&quot;,
+        &quot;description&quot;: &quot;Paquete de 500 hojas bond&quot;,
+        &quot;price&quot;: &quot;80.00&quot;,
+        &quot;stock&quot;: 100,
+        &quot;category&quot;: &quot;paper&quot;,
+        &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;
     },
     {
         &quot;id&quot;: 2,
@@ -306,8 +324,8 @@ access-control-allow-origin: *
         &quot;price&quot;: &quot;120.00&quot;,
         &quot;stock&quot;: 50,
         &quot;category&quot;: &quot;paper&quot;,
-        &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;
+        &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;
     },
     {
         &quot;id&quot;: 3,
@@ -316,18 +334,8 @@ access-control-allow-origin: *
         &quot;price&quot;: &quot;25.00&quot;,
         &quot;stock&quot;: 200,
         &quot;category&quot;: &quot;decor&quot;,
-        &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;
-    },
-    {
-        &quot;id&quot;: 5,
-        &quot;name&quot;: &quot;Lapiz #2&quot;,
-        &quot;description&quot;: &quot;Eius et animi quos velit et.&quot;,
-        &quot;price&quot;: &quot;6.00&quot;,
-        &quot;stock&quot;: 14,
-        &quot;category&quot;: &quot;prod&quot;,
-        &quot;created_at&quot;: &quot;2025-12-29T21:12:46.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2025-12-29T21:12:46.000000Z&quot;
+        &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;
     }
 ]</code>
  </pre>
@@ -643,13 +651,13 @@ access-control-allow-origin: *
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;id&quot;: 1,
-    &quot;name&quot;: &quot;Lapiz #10&quot;,
-    &quot;description&quot;: &quot;Eius et animi quos velit et.&quot;,
-    &quot;price&quot;: &quot;6.00&quot;,
-    &quot;stock&quot;: 14,
-    &quot;category&quot;: &quot;prod&quot;,
-    &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-    &quot;updated_at&quot;: &quot;2025-12-29T21:13:06.000000Z&quot;,
+    &quot;name&quot;: &quot;Hojas blancas tama&ntilde;o carta&quot;,
+    &quot;description&quot;: &quot;Paquete de 500 hojas bond&quot;,
+    &quot;price&quot;: &quot;80.00&quot;,
+    &quot;stock&quot;: 100,
+    &quot;category&quot;: &quot;paper&quot;,
+    &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+    &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
     &quot;bundle_items&quot;: []
 }</code>
  </pre>
@@ -1119,27 +1127,13 @@ access-control-allow-origin: *
 <code class="language-json" style="max-height: 300px;">[
     {
         &quot;id&quot;: 1,
-        &quot;name&quot;: &quot;Impresion&quot;,
-        &quot;description&quot;: &quot;Servicios de impresion de documentos&quot;,
-        &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2025-12-30T04:45:42.000000Z&quot;,
+        &quot;name&quot;: &quot;Impresi&oacute;n&quot;,
+        &quot;description&quot;: &quot;Impresi&oacute;n de documentos&quot;,
+        &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
         &quot;pricing_rules&quot;: [
             {
                 &quot;id&quot;: 1,
-                &quot;service_id&quot;: 1,
-                &quot;condition_type&quot;: &quot;quantity&quot;,
-                &quot;condition_value&quot;: &quot;architecto&quot;,
-                &quot;min_quantity&quot;: 10,
-                &quot;max_quantity&quot;: 100,
-                &quot;material&quot;: &quot;glossy&quot;,
-                &quot;size&quot;: &quot;architecto&quot;,
-                &quot;doc_type&quot;: &quot;architecto&quot;,
-                &quot;price&quot;: &quot;50.00&quot;,
-                &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2025-12-29T17:25:12.000000Z&quot;
-            },
-            {
-                &quot;id&quot;: 2,
                 &quot;service_id&quot;: 1,
                 &quot;condition_type&quot;: &quot;quantity&quot;,
                 &quot;condition_value&quot;: null,
@@ -1148,9 +1142,9 @@ access-control-allow-origin: *
                 &quot;material&quot;: null,
                 &quot;size&quot;: null,
                 &quot;doc_type&quot;: null,
-                &quot;price&quot;: &quot;4.00&quot;,
-                &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;
+                &quot;price&quot;: 4,
+                &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;
             },
             {
                 &quot;id&quot;: 3,
@@ -1162,9 +1156,9 @@ access-control-allow-origin: *
                 &quot;material&quot;: null,
                 &quot;size&quot;: null,
                 &quot;doc_type&quot;: null,
-                &quot;price&quot;: &quot;2.50&quot;,
-                &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;
+                &quot;price&quot;: 2.5,
+                &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;
             },
             {
                 &quot;id&quot;: 4,
@@ -1176,20 +1170,29 @@ access-control-allow-origin: *
                 &quot;material&quot;: &quot;opalina&quot;,
                 &quot;size&quot;: null,
                 &quot;doc_type&quot;: null,
-                &quot;price&quot;: &quot;5.00&quot;,
-                &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;
+                &quot;price&quot;: 5,
+                &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;
             }
         ],
         &quot;consumables&quot;: [
             {
+                &quot;id&quot;: 1,
+                &quot;service_id&quot;: 1,
+                &quot;product_id&quot;: 1,
+                &quot;units_per_service&quot;: 1,
+                &quot;material&quot;: null,
+                &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;
+            },
+            {
                 &quot;id&quot;: 2,
                 &quot;service_id&quot;: 1,
                 &quot;product_id&quot;: 2,
-                &quot;units_per_service&quot;: &quot;1.000&quot;,
+                &quot;units_per_service&quot;: 1,
                 &quot;material&quot;: &quot;opalina&quot;,
-                &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;
+                &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;
             }
         ]
     },
@@ -1197,27 +1200,17 @@ access-control-allow-origin: *
         &quot;id&quot;: 2,
         &quot;name&quot;: &quot;Enmicado&quot;,
         &quot;description&quot;: &quot;Protecci&oacute;n de documentos en mica&quot;,
-        &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
+        &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
         &quot;pricing_rules&quot;: [],
-        &quot;consumables&quot;: [
-            {
-                &quot;id&quot;: 1,
-                &quot;service_id&quot;: 2,
-                &quot;product_id&quot;: 2,
-                &quot;units_per_service&quot;: &quot;2.000&quot;,
-                &quot;material&quot;: &quot;glossy&quot;,
-                &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2025-12-29T18:01:08.000000Z&quot;
-            }
-        ]
+        &quot;consumables&quot;: []
     },
     {
         &quot;id&quot;: 3,
         &quot;name&quot;: &quot;Engargolado&quot;,
         &quot;description&quot;: &quot;Engargolado de hojas con espiral&quot;,
-        &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
+        &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
         &quot;pricing_rules&quot;: [
             {
                 &quot;id&quot;: 5,
@@ -1229,9 +1222,9 @@ access-control-allow-origin: *
                 &quot;material&quot;: null,
                 &quot;size&quot;: null,
                 &quot;doc_type&quot;: null,
-                &quot;price&quot;: &quot;20.00&quot;,
-                &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;
+                &quot;price&quot;: 20,
+                &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;
             },
             {
                 &quot;id&quot;: 6,
@@ -1243,29 +1236,11 @@ access-control-allow-origin: *
                 &quot;material&quot;: null,
                 &quot;size&quot;: null,
                 &quot;doc_type&quot;: null,
-                &quot;price&quot;: &quot;25.00&quot;,
-                &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;
+                &quot;price&quot;: 25,
+                &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;
             }
         ],
-        &quot;consumables&quot;: []
-    },
-    {
-        &quot;id&quot;: 4,
-        &quot;name&quot;: &quot;architecto&quot;,
-        &quot;description&quot;: &quot;Eius et animi quos velit et.&quot;,
-        &quot;created_at&quot;: &quot;2025-12-30T04:45:45.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2025-12-30T04:45:45.000000Z&quot;,
-        &quot;pricing_rules&quot;: [],
-        &quot;consumables&quot;: []
-    },
-    {
-        &quot;id&quot;: 5,
-        &quot;name&quot;: &quot;architecto&quot;,
-        &quot;description&quot;: &quot;Eius et animi quos velit et.&quot;,
-        &quot;created_at&quot;: &quot;2025-12-30T04:45:54.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2025-12-30T04:45:54.000000Z&quot;,
-        &quot;pricing_rules&quot;: [],
         &quot;consumables&quot;: []
     }
 ]</code>
@@ -1540,27 +1515,13 @@ access-control-allow-origin: *
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;id&quot;: 1,
-    &quot;name&quot;: &quot;Impresion&quot;,
-    &quot;description&quot;: &quot;Servicios de impresion de documentos&quot;,
-    &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-    &quot;updated_at&quot;: &quot;2025-12-30T04:45:42.000000Z&quot;,
+    &quot;name&quot;: &quot;Impresi&oacute;n&quot;,
+    &quot;description&quot;: &quot;Impresi&oacute;n de documentos&quot;,
+    &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+    &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
     &quot;pricing_rules&quot;: [
         {
             &quot;id&quot;: 1,
-            &quot;service_id&quot;: 1,
-            &quot;condition_type&quot;: &quot;quantity&quot;,
-            &quot;condition_value&quot;: &quot;architecto&quot;,
-            &quot;min_quantity&quot;: 10,
-            &quot;max_quantity&quot;: 100,
-            &quot;material&quot;: &quot;glossy&quot;,
-            &quot;size&quot;: &quot;architecto&quot;,
-            &quot;doc_type&quot;: &quot;architecto&quot;,
-            &quot;price&quot;: &quot;50.00&quot;,
-            &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-29T17:25:12.000000Z&quot;
-        },
-        {
-            &quot;id&quot;: 2,
             &quot;service_id&quot;: 1,
             &quot;condition_type&quot;: &quot;quantity&quot;,
             &quot;condition_value&quot;: null,
@@ -1569,9 +1530,9 @@ access-control-allow-origin: *
             &quot;material&quot;: null,
             &quot;size&quot;: null,
             &quot;doc_type&quot;: null,
-            &quot;price&quot;: &quot;4.00&quot;,
-            &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;
+            &quot;price&quot;: 4,
+            &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;
         },
         {
             &quot;id&quot;: 3,
@@ -1583,9 +1544,9 @@ access-control-allow-origin: *
             &quot;material&quot;: null,
             &quot;size&quot;: null,
             &quot;doc_type&quot;: null,
-            &quot;price&quot;: &quot;2.50&quot;,
-            &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;
+            &quot;price&quot;: 2.5,
+            &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;
         },
         {
             &quot;id&quot;: 4,
@@ -1597,31 +1558,40 @@ access-control-allow-origin: *
             &quot;material&quot;: &quot;opalina&quot;,
             &quot;size&quot;: null,
             &quot;doc_type&quot;: null,
-            &quot;price&quot;: &quot;5.00&quot;,
-            &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;
+            &quot;price&quot;: 5,
+            &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;
         }
     ],
     &quot;consumables&quot;: [
         {
+            &quot;id&quot;: 1,
+            &quot;service_id&quot;: 1,
+            &quot;product_id&quot;: 1,
+            &quot;units_per_service&quot;: 1,
+            &quot;material&quot;: null,
+            &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;
+        },
+        {
             &quot;id&quot;: 2,
             &quot;service_id&quot;: 1,
             &quot;product_id&quot;: 2,
-            &quot;units_per_service&quot;: &quot;1.000&quot;,
+            &quot;units_per_service&quot;: 1,
             &quot;material&quot;: &quot;opalina&quot;,
-            &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;
+            &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;
         }
     ],
     &quot;bundle_items&quot;: [
         {
-            &quot;id&quot;: 5,
-            &quot;bundle_id&quot;: 3,
-            &quot;item_type&quot;: &quot;App\\Models\\Service&quot;,
+            &quot;id&quot;: 4,
+            &quot;bundle_id&quot;: 1,
+            &quot;item_type&quot;: &quot;service&quot;,
             &quot;item_id&quot;: 1,
             &quot;quantity&quot;: 2,
-            &quot;created_at&quot;: &quot;2025-12-29T21:02:53.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-29T21:02:53.000000Z&quot;
+            &quot;created_at&quot;: &quot;2026-01-02T21:03:52.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2026-01-02T21:03:52.000000Z&quot;
         }
     ]
 }</code>
@@ -2052,42 +2022,21 @@ access-control-allow-origin: *
         &quot;id&quot;: 1,
         &quot;service_id&quot;: 1,
         &quot;condition_type&quot;: &quot;quantity&quot;,
-        &quot;condition_value&quot;: &quot;architecto&quot;,
-        &quot;min_quantity&quot;: 10,
-        &quot;max_quantity&quot;: 100,
-        &quot;material&quot;: &quot;glossy&quot;,
-        &quot;size&quot;: &quot;architecto&quot;,
-        &quot;doc_type&quot;: &quot;architecto&quot;,
-        &quot;price&quot;: &quot;50.00&quot;,
-        &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2025-12-29T17:25:12.000000Z&quot;,
-        &quot;service&quot;: {
-            &quot;id&quot;: 1,
-            &quot;name&quot;: &quot;Impresion&quot;,
-            &quot;description&quot;: &quot;Servicios de impresion de documentos&quot;,
-            &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-30T04:45:42.000000Z&quot;
-        }
-    },
-    {
-        &quot;id&quot;: 2,
-        &quot;service_id&quot;: 1,
-        &quot;condition_type&quot;: &quot;quantity&quot;,
         &quot;condition_value&quot;: null,
         &quot;min_quantity&quot;: 1,
         &quot;max_quantity&quot;: 100,
         &quot;material&quot;: null,
         &quot;size&quot;: null,
         &quot;doc_type&quot;: null,
-        &quot;price&quot;: &quot;4.00&quot;,
-        &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
+        &quot;price&quot;: 4,
+        &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
         &quot;service&quot;: {
             &quot;id&quot;: 1,
-            &quot;name&quot;: &quot;Impresion&quot;,
-            &quot;description&quot;: &quot;Servicios de impresion de documentos&quot;,
-            &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-30T04:45:42.000000Z&quot;
+            &quot;name&quot;: &quot;Impresi&oacute;n&quot;,
+            &quot;description&quot;: &quot;Impresi&oacute;n de documentos&quot;,
+            &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;
         }
     },
     {
@@ -2100,15 +2049,15 @@ access-control-allow-origin: *
         &quot;material&quot;: null,
         &quot;size&quot;: null,
         &quot;doc_type&quot;: null,
-        &quot;price&quot;: &quot;2.50&quot;,
-        &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
+        &quot;price&quot;: 2.5,
+        &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
         &quot;service&quot;: {
             &quot;id&quot;: 1,
-            &quot;name&quot;: &quot;Impresion&quot;,
-            &quot;description&quot;: &quot;Servicios de impresion de documentos&quot;,
-            &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-30T04:45:42.000000Z&quot;
+            &quot;name&quot;: &quot;Impresi&oacute;n&quot;,
+            &quot;description&quot;: &quot;Impresi&oacute;n de documentos&quot;,
+            &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;
         }
     },
     {
@@ -2121,15 +2070,15 @@ access-control-allow-origin: *
         &quot;material&quot;: &quot;opalina&quot;,
         &quot;size&quot;: null,
         &quot;doc_type&quot;: null,
-        &quot;price&quot;: &quot;5.00&quot;,
-        &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
+        &quot;price&quot;: 5,
+        &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
         &quot;service&quot;: {
             &quot;id&quot;: 1,
-            &quot;name&quot;: &quot;Impresion&quot;,
-            &quot;description&quot;: &quot;Servicios de impresion de documentos&quot;,
-            &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-30T04:45:42.000000Z&quot;
+            &quot;name&quot;: &quot;Impresi&oacute;n&quot;,
+            &quot;description&quot;: &quot;Impresi&oacute;n de documentos&quot;,
+            &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;
         }
     },
     {
@@ -2142,15 +2091,15 @@ access-control-allow-origin: *
         &quot;material&quot;: null,
         &quot;size&quot;: null,
         &quot;doc_type&quot;: null,
-        &quot;price&quot;: &quot;20.00&quot;,
-        &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
+        &quot;price&quot;: 20,
+        &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
         &quot;service&quot;: {
             &quot;id&quot;: 3,
             &quot;name&quot;: &quot;Engargolado&quot;,
             &quot;description&quot;: &quot;Engargolado de hojas con espiral&quot;,
-            &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;
+            &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;
         }
     },
     {
@@ -2163,15 +2112,15 @@ access-control-allow-origin: *
         &quot;material&quot;: null,
         &quot;size&quot;: null,
         &quot;doc_type&quot;: null,
-        &quot;price&quot;: &quot;25.00&quot;,
-        &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
+        &quot;price&quot;: 25,
+        &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
         &quot;service&quot;: {
             &quot;id&quot;: 3,
             &quot;name&quot;: &quot;Engargolado&quot;,
             &quot;description&quot;: &quot;Engargolado de hojas con espiral&quot;,
-            &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;
+            &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;
         }
     }
 ]</code>
@@ -2504,21 +2453,21 @@ access-control-allow-origin: *
     &quot;id&quot;: 1,
     &quot;service_id&quot;: 1,
     &quot;condition_type&quot;: &quot;quantity&quot;,
-    &quot;condition_value&quot;: &quot;architecto&quot;,
-    &quot;min_quantity&quot;: 10,
+    &quot;condition_value&quot;: null,
+    &quot;min_quantity&quot;: 1,
     &quot;max_quantity&quot;: 100,
-    &quot;material&quot;: &quot;glossy&quot;,
-    &quot;size&quot;: &quot;architecto&quot;,
-    &quot;doc_type&quot;: &quot;architecto&quot;,
-    &quot;price&quot;: &quot;50.00&quot;,
-    &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-    &quot;updated_at&quot;: &quot;2025-12-29T17:25:12.000000Z&quot;,
+    &quot;material&quot;: null,
+    &quot;size&quot;: null,
+    &quot;doc_type&quot;: null,
+    &quot;price&quot;: 4,
+    &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+    &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
     &quot;service&quot;: {
         &quot;id&quot;: 1,
-        &quot;name&quot;: &quot;Impresion&quot;,
-        &quot;description&quot;: &quot;Servicios de impresion de documentos&quot;,
-        &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2025-12-30T04:45:42.000000Z&quot;
+        &quot;name&quot;: &quot;Impresi&oacute;n&quot;,
+        &quot;description&quot;: &quot;Impresi&oacute;n de documentos&quot;,
+        &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;
     }
 }</code>
  </pre>
@@ -2628,13 +2577,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --data "{
     \"service_id\": 1,
     \"condition_type\": \"quantity\",
-    \"condition_value\": \"architecto\",
+    \"price\": 50,
     \"min_quantity\": 10,
     \"max_quantity\": 100,
-    \"material\": \"glossy\",
-    \"size\": \"architecto\",
-    \"doc_type\": \"architecto\",
-    \"price\": 50
+    \"material\": \"glossy\"
 }"
 </code></pre></div>
 
@@ -2652,13 +2598,10 @@ const headers = {
 let body = {
     "service_id": 1,
     "condition_type": "quantity",
-    "condition_value": "architecto",
+    "price": 50,
     "min_quantity": 10,
     "max_quantity": 100,
-    "material": "glossy",
-    "size": "architecto",
-    "doc_type": "architecto",
-    "price": 50
+    "material": "glossy"
 };
 
 fetch(url, {
@@ -2785,16 +2728,16 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>The type of condition for the pricing rule. Example: <code>quantity</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>condition_value</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
-<i>optional</i> &nbsp;
+            <b style="line-height: 2;"><code>price</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
  &nbsp;
-                <input type="text" style="display: none"
-                              name="condition_value"                data-endpoint="PUTapi-service-pricing-rules--id-"
-               value="architecto"
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="price"                data-endpoint="PUTapi-service-pricing-rules--id-"
+               value="50"
                data-component="body">
     <br>
-<p>Example: <code>architecto</code></p>
+<p>The price associated with the pricing rule. Example: <code>50</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>min_quantity</code></b>&nbsp;&nbsp;
@@ -2831,42 +2774,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
                data-component="body">
     <br>
 <p>The material associated with the pricing rule. Example: <code>glossy</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>size</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
-<i>optional</i> &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="size"                data-endpoint="PUTapi-service-pricing-rules--id-"
-               value="architecto"
-               data-component="body">
-    <br>
-<p>Example: <code>architecto</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>doc_type</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
-<i>optional</i> &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="doc_type"                data-endpoint="PUTapi-service-pricing-rules--id-"
-               value="architecto"
-               data-component="body">
-    <br>
-<p>Example: <code>architecto</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>price</code></b>&nbsp;&nbsp;
-<small>number</small>&nbsp;
- &nbsp;
- &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="price"                data-endpoint="PUTapi-service-pricing-rules--id-"
-               value="50"
-               data-component="body">
-    <br>
-<p>The price associated with the pricing rule. Example: <code>50</code></p>
         </div>
         </form>
 
@@ -3044,44 +2951,44 @@ access-control-allow-origin: *
 <code class="language-json" style="max-height: 300px;">[
     {
         &quot;id&quot;: 1,
-        &quot;service_id&quot;: 2,
-        &quot;product_id&quot;: 2,
-        &quot;units_per_service&quot;: &quot;2.000&quot;,
-        &quot;material&quot;: &quot;glossy&quot;,
-        &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2025-12-29T18:01:08.000000Z&quot;,
+        &quot;service_id&quot;: 1,
+        &quot;product_id&quot;: 1,
+        &quot;units_per_service&quot;: 1,
+        &quot;material&quot;: null,
+        &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
         &quot;service&quot;: {
-            &quot;id&quot;: 2,
-            &quot;name&quot;: &quot;Enmicado&quot;,
-            &quot;description&quot;: &quot;Protecci&oacute;n de documentos en mica&quot;,
-            &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;
+            &quot;id&quot;: 1,
+            &quot;name&quot;: &quot;Impresi&oacute;n&quot;,
+            &quot;description&quot;: &quot;Impresi&oacute;n de documentos&quot;,
+            &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;
         },
         &quot;product&quot;: {
-            &quot;id&quot;: 2,
-            &quot;name&quot;: &quot;Hojas opalina&quot;,
-            &quot;description&quot;: &quot;Paquete de 100 hojas opalina&quot;,
-            &quot;price&quot;: &quot;120.00&quot;,
-            &quot;stock&quot;: 50,
+            &quot;id&quot;: 1,
+            &quot;name&quot;: &quot;Hojas blancas tama&ntilde;o carta&quot;,
+            &quot;description&quot;: &quot;Paquete de 500 hojas bond&quot;,
+            &quot;price&quot;: &quot;80.00&quot;,
+            &quot;stock&quot;: 100,
             &quot;category&quot;: &quot;paper&quot;,
-            &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;
+            &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;
         }
     },
     {
         &quot;id&quot;: 2,
         &quot;service_id&quot;: 1,
         &quot;product_id&quot;: 2,
-        &quot;units_per_service&quot;: &quot;1.000&quot;,
+        &quot;units_per_service&quot;: 1,
         &quot;material&quot;: &quot;opalina&quot;,
-        &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
+        &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
         &quot;service&quot;: {
             &quot;id&quot;: 1,
-            &quot;name&quot;: &quot;Impresion&quot;,
-            &quot;description&quot;: &quot;Servicios de impresion de documentos&quot;,
-            &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-30T04:45:42.000000Z&quot;
+            &quot;name&quot;: &quot;Impresi&oacute;n&quot;,
+            &quot;description&quot;: &quot;Impresi&oacute;n de documentos&quot;,
+            &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;
         },
         &quot;product&quot;: {
             &quot;id&quot;: 2,
@@ -3090,8 +2997,8 @@ access-control-allow-origin: *
             &quot;price&quot;: &quot;120.00&quot;,
             &quot;stock&quot;: 50,
             &quot;category&quot;: &quot;paper&quot;,
-            &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;
+            &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;
         }
     }
 ]</code>
@@ -3394,28 +3301,28 @@ access-control-allow-origin: *
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;id&quot;: 1,
-    &quot;service_id&quot;: 2,
-    &quot;product_id&quot;: 2,
-    &quot;units_per_service&quot;: &quot;2.000&quot;,
-    &quot;material&quot;: &quot;glossy&quot;,
-    &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-    &quot;updated_at&quot;: &quot;2025-12-29T18:01:08.000000Z&quot;,
+    &quot;service_id&quot;: 1,
+    &quot;product_id&quot;: 1,
+    &quot;units_per_service&quot;: 1,
+    &quot;material&quot;: null,
+    &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+    &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
     &quot;service&quot;: {
-        &quot;id&quot;: 2,
-        &quot;name&quot;: &quot;Enmicado&quot;,
-        &quot;description&quot;: &quot;Protecci&oacute;n de documentos en mica&quot;,
-        &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;
+        &quot;id&quot;: 1,
+        &quot;name&quot;: &quot;Impresi&oacute;n&quot;,
+        &quot;description&quot;: &quot;Impresi&oacute;n de documentos&quot;,
+        &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;
     },
     &quot;product&quot;: {
-        &quot;id&quot;: 2,
-        &quot;name&quot;: &quot;Hojas opalina&quot;,
-        &quot;description&quot;: &quot;Paquete de 100 hojas opalina&quot;,
-        &quot;price&quot;: &quot;120.00&quot;,
-        &quot;stock&quot;: 50,
+        &quot;id&quot;: 1,
+        &quot;name&quot;: &quot;Hojas blancas tama&ntilde;o carta&quot;,
+        &quot;description&quot;: &quot;Paquete de 500 hojas bond&quot;,
+        &quot;price&quot;: &quot;80.00&quot;,
+        &quot;stock&quot;: 100,
         &quot;category&quot;: &quot;paper&quot;,
-        &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;
+        &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;
     }
 }</code>
  </pre>
@@ -3870,26 +3777,89 @@ access-control-allow-origin: *
 
 <code class="language-json" style="max-height: 300px;">[
     {
-        &quot;id&quot;: 3,
-        &quot;name&quot;: &quot;Dia de la Madre&quot;,
-        &quot;description&quot;: &quot;Paquete especial para el Dia de la Madre&quot;,
-        &quot;created_at&quot;: &quot;2025-12-29T20:33:37.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2025-12-29T21:02:53.000000Z&quot;,
+        &quot;id&quot;: 1,
+        &quot;name&quot;: &quot;Kit Escolar B&aacute;sico&quot;,
+        &quot;description&quot;: &quot;Paquete de hojas + servicio de impresi&oacute;n&quot;,
+        &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
         &quot;items&quot;: [
             {
-                &quot;id&quot;: 5,
-                &quot;bundle_id&quot;: 3,
-                &quot;item_type&quot;: &quot;App\\Models\\Service&quot;,
+                &quot;id&quot;: 3,
+                &quot;bundle_id&quot;: 1,
+                &quot;item_type&quot;: &quot;service&quot;,
+                &quot;item_id&quot;: 2,
+                &quot;quantity&quot;: 3,
+                &quot;created_at&quot;: &quot;2026-01-02T21:03:39.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2026-01-08T20:57:58.000000Z&quot;,
+                &quot;item&quot;: {
+                    &quot;id&quot;: 2,
+                    &quot;name&quot;: &quot;Enmicado&quot;,
+                    &quot;description&quot;: &quot;Protecci&oacute;n de documentos en mica&quot;,
+                    &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;
+                }
+            },
+            {
+                &quot;id&quot;: 4,
+                &quot;bundle_id&quot;: 1,
+                &quot;item_type&quot;: &quot;service&quot;,
                 &quot;item_id&quot;: 1,
                 &quot;quantity&quot;: 2,
-                &quot;created_at&quot;: &quot;2025-12-29T21:02:53.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2025-12-29T21:02:53.000000Z&quot;,
+                &quot;created_at&quot;: &quot;2026-01-02T21:03:52.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2026-01-02T21:03:52.000000Z&quot;,
                 &quot;item&quot;: {
                     &quot;id&quot;: 1,
-                    &quot;name&quot;: &quot;Impresion&quot;,
-                    &quot;description&quot;: &quot;Servicios de impresion de documentos&quot;,
-                    &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-                    &quot;updated_at&quot;: &quot;2025-12-30T04:45:42.000000Z&quot;
+                    &quot;name&quot;: &quot;Impresi&oacute;n&quot;,
+                    &quot;description&quot;: &quot;Impresi&oacute;n de documentos&quot;,
+                    &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;
+                }
+            },
+            {
+                &quot;id&quot;: 5,
+                &quot;bundle_id&quot;: 1,
+                &quot;item_type&quot;: &quot;product&quot;,
+                &quot;item_id&quot;: 2,
+                &quot;quantity&quot;: 1,
+                &quot;created_at&quot;: &quot;2026-01-08T21:09:07.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2026-01-08T21:09:07.000000Z&quot;,
+                &quot;item&quot;: {
+                    &quot;id&quot;: 2,
+                    &quot;name&quot;: &quot;Hojas opalina&quot;,
+                    &quot;description&quot;: &quot;Paquete de 100 hojas opalina&quot;,
+                    &quot;price&quot;: &quot;120.00&quot;,
+                    &quot;stock&quot;: 50,
+                    &quot;category&quot;: &quot;paper&quot;,
+                    &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;
+                }
+            }
+        ]
+    },
+    {
+        &quot;id&quot;: 2,
+        &quot;name&quot;: &quot;Super kkit&quot;,
+        &quot;description&quot;: null,
+        &quot;created_at&quot;: &quot;2026-01-09T17:17:31.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2026-01-09T17:17:31.000000Z&quot;,
+        &quot;items&quot;: [
+            {
+                &quot;id&quot;: 6,
+                &quot;bundle_id&quot;: 2,
+                &quot;item_type&quot;: &quot;product&quot;,
+                &quot;item_id&quot;: 2,
+                &quot;quantity&quot;: 2,
+                &quot;created_at&quot;: &quot;2026-01-09T17:17:50.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2026-01-09T17:17:50.000000Z&quot;,
+                &quot;item&quot;: {
+                    &quot;id&quot;: 2,
+                    &quot;name&quot;: &quot;Hojas opalina&quot;,
+                    &quot;description&quot;: &quot;Paquete de 100 hojas opalina&quot;,
+                    &quot;price&quot;: &quot;120.00&quot;,
+                    &quot;stock&quot;: 50,
+                    &quot;category&quot;: &quot;paper&quot;,
+                    &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;
                 }
             }
         ]
@@ -4129,14 +4099,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8081/api/bundles/3" \
+    --get "http://127.0.0.1:8081/api/bundles/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8081/api/bundles/3"
+    "http://127.0.0.1:8081/api/bundles/1"
 );
 
 const headers = {
@@ -4165,26 +4135,61 @@ access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;id&quot;: 3,
-    &quot;name&quot;: &quot;Dia de la Madre&quot;,
-    &quot;description&quot;: &quot;Paquete especial para el Dia de la Madre&quot;,
-    &quot;created_at&quot;: &quot;2025-12-29T20:33:37.000000Z&quot;,
-    &quot;updated_at&quot;: &quot;2025-12-29T21:02:53.000000Z&quot;,
+    &quot;id&quot;: 1,
+    &quot;name&quot;: &quot;Kit Escolar B&aacute;sico&quot;,
+    &quot;description&quot;: &quot;Paquete de hojas + servicio de impresi&oacute;n&quot;,
+    &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+    &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
     &quot;items&quot;: [
         {
-            &quot;id&quot;: 5,
-            &quot;bundle_id&quot;: 3,
-            &quot;item_type&quot;: &quot;App\\Models\\Service&quot;,
+            &quot;id&quot;: 3,
+            &quot;bundle_id&quot;: 1,
+            &quot;item_type&quot;: &quot;service&quot;,
+            &quot;item_id&quot;: 2,
+            &quot;quantity&quot;: 3,
+            &quot;created_at&quot;: &quot;2026-01-02T21:03:39.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2026-01-08T20:57:58.000000Z&quot;,
+            &quot;item&quot;: {
+                &quot;id&quot;: 2,
+                &quot;name&quot;: &quot;Enmicado&quot;,
+                &quot;description&quot;: &quot;Protecci&oacute;n de documentos en mica&quot;,
+                &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 4,
+            &quot;bundle_id&quot;: 1,
+            &quot;item_type&quot;: &quot;service&quot;,
             &quot;item_id&quot;: 1,
             &quot;quantity&quot;: 2,
-            &quot;created_at&quot;: &quot;2025-12-29T21:02:53.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-29T21:02:53.000000Z&quot;,
+            &quot;created_at&quot;: &quot;2026-01-02T21:03:52.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2026-01-02T21:03:52.000000Z&quot;,
             &quot;item&quot;: {
                 &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;Impresion&quot;,
-                &quot;description&quot;: &quot;Servicios de impresion de documentos&quot;,
-                &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2025-12-30T04:45:42.000000Z&quot;
+                &quot;name&quot;: &quot;Impresi&oacute;n&quot;,
+                &quot;description&quot;: &quot;Impresi&oacute;n de documentos&quot;,
+                &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 5,
+            &quot;bundle_id&quot;: 1,
+            &quot;item_type&quot;: &quot;product&quot;,
+            &quot;item_id&quot;: 2,
+            &quot;quantity&quot;: 1,
+            &quot;created_at&quot;: &quot;2026-01-08T21:09:07.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2026-01-08T21:09:07.000000Z&quot;,
+            &quot;item&quot;: {
+                &quot;id&quot;: 2,
+                &quot;name&quot;: &quot;Hojas opalina&quot;,
+                &quot;description&quot;: &quot;Paquete de 100 hojas opalina&quot;,
+                &quot;price&quot;: &quot;120.00&quot;,
+                &quot;stock&quot;: 50,
+                &quot;category&quot;: &quot;paper&quot;,
+                &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;
             }
         }
     ]
@@ -4270,10 +4275,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="GETapi-bundles--id-"
-               value="3"
+               value="1"
                data-component="url">
     <br>
-<p>The ID of the bundle. Example: <code>3</code></p>
+<p>The ID of the bundle. Example: <code>1</code></p>
             </div>
                     </form>
 
@@ -4290,7 +4295,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://127.0.0.1:8081/api/bundles/3" \
+    "http://127.0.0.1:8081/api/bundles/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -4302,7 +4307,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8081/api/bundles/3"
+    "http://127.0.0.1:8081/api/bundles/1"
 );
 
 const headers = {
@@ -4408,10 +4413,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="PUTapi-bundles--id-"
-               value="3"
+               value="1"
                data-component="url">
     <br>
-<p>The ID of the bundle. Example: <code>3</code></p>
+<p>The ID of the bundle. Example: <code>1</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -4453,14 +4458,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://127.0.0.1:8081/api/bundles/3" \
+    "http://127.0.0.1:8081/api/bundles/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8081/api/bundles/3"
+    "http://127.0.0.1:8081/api/bundles/1"
 );
 
 const headers = {
@@ -4556,10 +4561,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="DELETEapi-bundles--id-"
-               value="3"
+               value="1"
                data-component="url">
     <br>
-<p>The ID of the bundle. Example: <code>3</code></p>
+<p>The ID of the bundle. Example: <code>1</code></p>
             </div>
                     </form>
 
@@ -4613,26 +4618,101 @@ access-control-allow-origin: *
 
 <code class="language-json" style="max-height: 300px;">[
     {
-        &quot;id&quot;: 5,
-        &quot;bundle_id&quot;: 3,
-        &quot;item_type&quot;: &quot;App\\Models\\Service&quot;,
+        &quot;id&quot;: 3,
+        &quot;bundle_id&quot;: 1,
+        &quot;item_type&quot;: &quot;service&quot;,
+        &quot;item_id&quot;: 2,
+        &quot;quantity&quot;: 3,
+        &quot;created_at&quot;: &quot;2026-01-02T21:03:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2026-01-08T20:57:58.000000Z&quot;,
+        &quot;bundle&quot;: {
+            &quot;id&quot;: 1,
+            &quot;name&quot;: &quot;Kit Escolar B&aacute;sico&quot;,
+            &quot;description&quot;: &quot;Paquete de hojas + servicio de impresi&oacute;n&quot;,
+            &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;
+        },
+        &quot;item&quot;: {
+            &quot;id&quot;: 2,
+            &quot;name&quot;: &quot;Enmicado&quot;,
+            &quot;description&quot;: &quot;Protecci&oacute;n de documentos en mica&quot;,
+            &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;
+        }
+    },
+    {
+        &quot;id&quot;: 4,
+        &quot;bundle_id&quot;: 1,
+        &quot;item_type&quot;: &quot;service&quot;,
         &quot;item_id&quot;: 1,
         &quot;quantity&quot;: 2,
-        &quot;created_at&quot;: &quot;2025-12-29T21:02:53.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2025-12-29T21:02:53.000000Z&quot;,
+        &quot;created_at&quot;: &quot;2026-01-02T21:03:52.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2026-01-02T21:03:52.000000Z&quot;,
         &quot;bundle&quot;: {
-            &quot;id&quot;: 3,
-            &quot;name&quot;: &quot;Dia de la Madre&quot;,
-            &quot;description&quot;: &quot;Paquete especial para el Dia de la Madre&quot;,
-            &quot;created_at&quot;: &quot;2025-12-29T20:33:37.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-29T21:02:53.000000Z&quot;
+            &quot;id&quot;: 1,
+            &quot;name&quot;: &quot;Kit Escolar B&aacute;sico&quot;,
+            &quot;description&quot;: &quot;Paquete de hojas + servicio de impresi&oacute;n&quot;,
+            &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;
         },
         &quot;item&quot;: {
             &quot;id&quot;: 1,
-            &quot;name&quot;: &quot;Impresion&quot;,
-            &quot;description&quot;: &quot;Servicios de impresion de documentos&quot;,
-            &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-30T04:45:42.000000Z&quot;
+            &quot;name&quot;: &quot;Impresi&oacute;n&quot;,
+            &quot;description&quot;: &quot;Impresi&oacute;n de documentos&quot;,
+            &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;
+        }
+    },
+    {
+        &quot;id&quot;: 5,
+        &quot;bundle_id&quot;: 1,
+        &quot;item_type&quot;: &quot;product&quot;,
+        &quot;item_id&quot;: 2,
+        &quot;quantity&quot;: 1,
+        &quot;created_at&quot;: &quot;2026-01-08T21:09:07.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2026-01-08T21:09:07.000000Z&quot;,
+        &quot;bundle&quot;: {
+            &quot;id&quot;: 1,
+            &quot;name&quot;: &quot;Kit Escolar B&aacute;sico&quot;,
+            &quot;description&quot;: &quot;Paquete de hojas + servicio de impresi&oacute;n&quot;,
+            &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;
+        },
+        &quot;item&quot;: {
+            &quot;id&quot;: 2,
+            &quot;name&quot;: &quot;Hojas opalina&quot;,
+            &quot;description&quot;: &quot;Paquete de 100 hojas opalina&quot;,
+            &quot;price&quot;: &quot;120.00&quot;,
+            &quot;stock&quot;: 50,
+            &quot;category&quot;: &quot;paper&quot;,
+            &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;
+        }
+    },
+    {
+        &quot;id&quot;: 6,
+        &quot;bundle_id&quot;: 2,
+        &quot;item_type&quot;: &quot;product&quot;,
+        &quot;item_id&quot;: 2,
+        &quot;quantity&quot;: 2,
+        &quot;created_at&quot;: &quot;2026-01-09T17:17:50.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2026-01-09T17:17:50.000000Z&quot;,
+        &quot;bundle&quot;: {
+            &quot;id&quot;: 2,
+            &quot;name&quot;: &quot;Super kkit&quot;,
+            &quot;description&quot;: null,
+            &quot;created_at&quot;: &quot;2026-01-09T17:17:31.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2026-01-09T17:17:31.000000Z&quot;
+        },
+        &quot;item&quot;: {
+            &quot;id&quot;: 2,
+            &quot;name&quot;: &quot;Hojas opalina&quot;,
+            &quot;description&quot;: &quot;Paquete de 100 hojas opalina&quot;,
+            &quot;price&quot;: &quot;120.00&quot;,
+            &quot;stock&quot;: 50,
+            &quot;category&quot;: &quot;paper&quot;,
+            &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;
         }
     }
 ]</code>
@@ -4898,14 +4978,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8081/api/bundle-items/5" \
+    --get "http://127.0.0.1:8081/api/bundle-items/3" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8081/api/bundle-items/5"
+    "http://127.0.0.1:8081/api/bundle-items/3"
 );
 
 const headers = {
@@ -4934,26 +5014,26 @@ access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;id&quot;: 5,
-    &quot;bundle_id&quot;: 3,
-    &quot;item_type&quot;: &quot;App\\Models\\Service&quot;,
-    &quot;item_id&quot;: 1,
-    &quot;quantity&quot;: 2,
-    &quot;created_at&quot;: &quot;2025-12-29T21:02:53.000000Z&quot;,
-    &quot;updated_at&quot;: &quot;2025-12-29T21:02:53.000000Z&quot;,
+    &quot;id&quot;: 3,
+    &quot;bundle_id&quot;: 1,
+    &quot;item_type&quot;: &quot;service&quot;,
+    &quot;item_id&quot;: 2,
+    &quot;quantity&quot;: 3,
+    &quot;created_at&quot;: &quot;2026-01-02T21:03:39.000000Z&quot;,
+    &quot;updated_at&quot;: &quot;2026-01-08T20:57:58.000000Z&quot;,
     &quot;bundle&quot;: {
-        &quot;id&quot;: 3,
-        &quot;name&quot;: &quot;Dia de la Madre&quot;,
-        &quot;description&quot;: &quot;Paquete especial para el Dia de la Madre&quot;,
-        &quot;created_at&quot;: &quot;2025-12-29T20:33:37.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2025-12-29T21:02:53.000000Z&quot;
+        &quot;id&quot;: 1,
+        &quot;name&quot;: &quot;Kit Escolar B&aacute;sico&quot;,
+        &quot;description&quot;: &quot;Paquete de hojas + servicio de impresi&oacute;n&quot;,
+        &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;
     },
     &quot;item&quot;: {
-        &quot;id&quot;: 1,
-        &quot;name&quot;: &quot;Impresion&quot;,
-        &quot;description&quot;: &quot;Servicios de impresion de documentos&quot;,
-        &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2025-12-30T04:45:42.000000Z&quot;
+        &quot;id&quot;: 2,
+        &quot;name&quot;: &quot;Enmicado&quot;,
+        &quot;description&quot;: &quot;Protecci&oacute;n de documentos en mica&quot;,
+        &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;
     }
 }</code>
  </pre>
@@ -5037,10 +5117,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="GETapi-bundle-items--id-"
-               value="5"
+               value="3"
                data-component="url">
     <br>
-<p>The ID of the bundle item. Example: <code>5</code></p>
+<p>The ID of the bundle item. Example: <code>3</code></p>
             </div>
                     </form>
 
@@ -5057,7 +5137,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://127.0.0.1:8081/api/bundle-items/5" \
+    "http://127.0.0.1:8081/api/bundle-items/3" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -5071,7 +5151,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8081/api/bundle-items/5"
+    "http://127.0.0.1:8081/api/bundle-items/3"
 );
 
 const headers = {
@@ -5179,10 +5259,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="PUTapi-bundle-items--id-"
-               value="5"
+               value="3"
                data-component="url">
     <br>
-<p>The ID of the bundle item. Example: <code>5</code></p>
+<p>The ID of the bundle item. Example: <code>3</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -5248,14 +5328,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://127.0.0.1:8081/api/bundle-items/5" \
+    "http://127.0.0.1:8081/api/bundle-items/3" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8081/api/bundle-items/5"
+    "http://127.0.0.1:8081/api/bundle-items/3"
 );
 
 const headers = {
@@ -5351,10 +5431,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="DELETEapi-bundle-items--id-"
-               value="5"
+               value="3"
                data-component="url">
     <br>
-<p>The ID of the bundle item. Example: <code>5</code></p>
+<p>The ID of the bundle item. Example: <code>3</code></p>
             </div>
                     </form>
 
@@ -5409,19 +5489,22 @@ access-control-allow-origin: *
 <code class="language-json" style="max-height: 300px;">[
     {
         &quot;id&quot;: 1,
-        &quot;name&quot;: &quot;Juan P&eacute;rez&quot;,
-        &quot;phone&quot;: &quot;555-1234&quot;,
-        &quot;email&quot;: &quot;juan@example.com&quot;,
-        &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
+        &quot;name&quot;: &quot;Juan P&eacute;rezito&quot;,
+        &quot;phone&quot;: &quot;555-123412&quot;,
+        &quot;email&quot;: &quot;juan12@example.com&quot;,
+        &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2026-01-05T16:03:39.000000Z&quot;,
         &quot;orders&quot;: [
             {
                 &quot;id&quot;: 1,
                 &quot;customer_id&quot;: 1,
-                &quot;total&quot;: &quot;100.00&quot;,
+                &quot;total&quot;: 100,
                 &quot;status&quot;: &quot;pending&quot;,
-                &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;
+                &quot;description&quot;: null,
+                &quot;photo_paths&quot;: null,
+                &quot;photo_links&quot;: null,
+                &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2026-01-05T20:11:32.000000Z&quot;
             }
         ]
     },
@@ -5430,16 +5513,19 @@ access-control-allow-origin: *
         &quot;name&quot;: &quot;Mar&iacute;a L&oacute;pez&quot;,
         &quot;phone&quot;: &quot;555-5678&quot;,
         &quot;email&quot;: &quot;maria@example.com&quot;,
-        &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
+        &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
         &quot;orders&quot;: [
             {
                 &quot;id&quot;: 2,
                 &quot;customer_id&quot;: 2,
-                &quot;total&quot;: &quot;200.00&quot;,
+                &quot;total&quot;: 200,
                 &quot;status&quot;: &quot;completed&quot;,
-                &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;
+                &quot;description&quot;: null,
+                &quot;photo_paths&quot;: null,
+                &quot;photo_links&quot;: null,
+                &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;
             }
         ]
     }
@@ -5729,19 +5815,22 @@ access-control-allow-origin: *
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;id&quot;: 1,
-    &quot;name&quot;: &quot;Juan P&eacute;rez&quot;,
-    &quot;phone&quot;: &quot;555-1234&quot;,
-    &quot;email&quot;: &quot;juan@example.com&quot;,
-    &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-    &quot;updated_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
+    &quot;name&quot;: &quot;Juan P&eacute;rezito&quot;,
+    &quot;phone&quot;: &quot;555-123412&quot;,
+    &quot;email&quot;: &quot;juan12@example.com&quot;,
+    &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+    &quot;updated_at&quot;: &quot;2026-01-05T16:03:39.000000Z&quot;,
     &quot;orders&quot;: [
         {
             &quot;id&quot;: 1,
             &quot;customer_id&quot;: 1,
-            &quot;total&quot;: &quot;100.00&quot;,
+            &quot;total&quot;: 100,
             &quot;status&quot;: &quot;pending&quot;,
-            &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;
+            &quot;description&quot;: null,
+            &quot;photo_paths&quot;: null,
+            &quot;photo_links&quot;: null,
+            &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2026-01-05T20:11:32.000000Z&quot;
         }
     ]
 }</code>
@@ -6133,841 +6222,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                     </form>
 
-                    <h2 id="endpoints-GETapi-orders">GET api/orders</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-GETapi-orders">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8081/api/orders" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8081/api/orders"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-GETapi-orders">
-            <blockquote>
-            <p>Example response (200):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-access-control-allow-origin: *
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">[
-    {
-        &quot;id&quot;: 1,
-        &quot;customer_id&quot;: 1,
-        &quot;total&quot;: &quot;100.00&quot;,
-        &quot;status&quot;: &quot;pending&quot;,
-        &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-        &quot;customer&quot;: {
-            &quot;id&quot;: 1,
-            &quot;name&quot;: &quot;Juan P&eacute;rez&quot;,
-            &quot;phone&quot;: &quot;555-1234&quot;,
-            &quot;email&quot;: &quot;juan@example.com&quot;,
-            &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;
-        },
-        &quot;items&quot;: [
-            {
-                &quot;id&quot;: 1,
-                &quot;order_id&quot;: 1,
-                &quot;item_type&quot;: &quot;App\\Models\\Product&quot;,
-                &quot;item_id&quot;: 1,
-                &quot;quantity&quot;: 1,
-                &quot;unit_price&quot;: &quot;80.00&quot;,
-                &quot;meta&quot;: null,
-                &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-                &quot;item&quot;: {
-                    &quot;id&quot;: 1,
-                    &quot;name&quot;: &quot;Lapiz #10&quot;,
-                    &quot;description&quot;: &quot;Eius et animi quos velit et.&quot;,
-                    &quot;price&quot;: &quot;6.00&quot;,
-                    &quot;stock&quot;: 14,
-                    &quot;category&quot;: &quot;prod&quot;,
-                    &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-                    &quot;updated_at&quot;: &quot;2025-12-29T21:13:06.000000Z&quot;
-                }
-            }
-        ]
-    },
-    {
-        &quot;id&quot;: 2,
-        &quot;customer_id&quot;: 2,
-        &quot;total&quot;: &quot;200.00&quot;,
-        &quot;status&quot;: &quot;completed&quot;,
-        &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-        &quot;customer&quot;: {
-            &quot;id&quot;: 2,
-            &quot;name&quot;: &quot;Mar&iacute;a L&oacute;pez&quot;,
-            &quot;phone&quot;: &quot;555-5678&quot;,
-            &quot;email&quot;: &quot;maria@example.com&quot;,
-            &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;
-        },
-        &quot;items&quot;: [
-            {
-                &quot;id&quot;: 2,
-                &quot;order_id&quot;: 2,
-                &quot;item_type&quot;: &quot;App\\Models\\Service&quot;,
-                &quot;item_id&quot;: 1,
-                &quot;quantity&quot;: 50,
-                &quot;unit_price&quot;: &quot;4.00&quot;,
-                &quot;meta&quot;: null,
-                &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-                &quot;item&quot;: {
-                    &quot;id&quot;: 1,
-                    &quot;name&quot;: &quot;Impresion&quot;,
-                    &quot;description&quot;: &quot;Servicios de impresion de documentos&quot;,
-                    &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-                    &quot;updated_at&quot;: &quot;2025-12-30T04:45:42.000000Z&quot;
-                }
-            }
-        ]
-    }
-]</code>
- </pre>
-    </span>
-<span id="execution-results-GETapi-orders" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-orders"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-orders"
-      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-GETapi-orders" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-orders">
-
-Tip: Check that you&#039;re properly connected to the network.
-If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
-You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-GETapi-orders" data-method="GET"
-      data-path="api/orders"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-orders', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-orders"
-                    onclick="tryItOut('GETapi-orders');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-orders"
-                    onclick="cancelTryOut('GETapi-orders');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-orders"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/orders</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-orders"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-orders"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        </form>
-
-                    <h2 id="endpoints-POSTapi-orders">POST api/orders</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-POSTapi-orders">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request POST \
-    "http://127.0.0.1:8081/api/orders" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json" \
-    --data "{
-    \"customer_id\": 1,
-    \"total\": 150.75,
-    \"status\": \"pending\"
-}"
-</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8081/api/orders"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "customer_id": 1,
-    "total": 150.75,
-    "status": "pending"
-};
-
-fetch(url, {
-    method: "POST",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-POSTapi-orders">
-</span>
-<span id="execution-results-POSTapi-orders" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-POSTapi-orders"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-orders"
-      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-POSTapi-orders" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-orders">
-
-Tip: Check that you&#039;re properly connected to the network.
-If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
-You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-POSTapi-orders" data-method="POST"
-      data-path="api/orders"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('POSTapi-orders', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-POSTapi-orders"
-                    onclick="tryItOut('POSTapi-orders');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-POSTapi-orders"
-                    onclick="cancelTryOut('POSTapi-orders');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-POSTapi-orders"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-black">POST</small>
-            <b><code>api/orders</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="POSTapi-orders"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="POSTapi-orders"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
-        <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>customer_id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
- &nbsp;
- &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="customer_id"                data-endpoint="POSTapi-orders"
-               value="1"
-               data-component="body">
-    <br>
-<p>The ID of the customer placing the order. Example: <code>1</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>total</code></b>&nbsp;&nbsp;
-<small>number</small>&nbsp;
-<i>optional</i> &nbsp;
- &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="total"                data-endpoint="POSTapi-orders"
-               value="150.75"
-               data-component="body">
-    <br>
-<p>The total amount of the order. Example: <code>150.75</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
-<i>optional</i> &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="status"                data-endpoint="POSTapi-orders"
-               value="pending"
-               data-component="body">
-    <br>
-<p>The status of the order. Example: <code>pending</code></p>
-        </div>
-        </form>
-
-                    <h2 id="endpoints-GETapi-orders--id-">GET api/orders/{id}</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-GETapi-orders--id-">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8081/api/orders/1" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8081/api/orders/1"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-GETapi-orders--id-">
-            <blockquote>
-            <p>Example response (200):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-access-control-allow-origin: *
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;id&quot;: 1,
-    &quot;customer_id&quot;: 1,
-    &quot;total&quot;: &quot;100.00&quot;,
-    &quot;status&quot;: &quot;pending&quot;,
-    &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-    &quot;updated_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-    &quot;customer&quot;: {
-        &quot;id&quot;: 1,
-        &quot;name&quot;: &quot;Juan P&eacute;rez&quot;,
-        &quot;phone&quot;: &quot;555-1234&quot;,
-        &quot;email&quot;: &quot;juan@example.com&quot;,
-        &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;
-    },
-    &quot;items&quot;: [
-        {
-            &quot;id&quot;: 1,
-            &quot;order_id&quot;: 1,
-            &quot;item_type&quot;: &quot;App\\Models\\Product&quot;,
-            &quot;item_id&quot;: 1,
-            &quot;quantity&quot;: 1,
-            &quot;unit_price&quot;: &quot;80.00&quot;,
-            &quot;meta&quot;: null,
-            &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-            &quot;item&quot;: {
-                &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;Lapiz #10&quot;,
-                &quot;description&quot;: &quot;Eius et animi quos velit et.&quot;,
-                &quot;price&quot;: &quot;6.00&quot;,
-                &quot;stock&quot;: 14,
-                &quot;category&quot;: &quot;prod&quot;,
-                &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2025-12-29T21:13:06.000000Z&quot;
-            }
-        }
-    ]
-}</code>
- </pre>
-    </span>
-<span id="execution-results-GETapi-orders--id-" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-orders--id-"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-orders--id-"
-      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-GETapi-orders--id-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-orders--id-">
-
-Tip: Check that you&#039;re properly connected to the network.
-If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
-You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-GETapi-orders--id-" data-method="GET"
-      data-path="api/orders/{id}"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-orders--id-', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-orders--id-"
-                    onclick="tryItOut('GETapi-orders--id-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-orders--id-"
-                    onclick="cancelTryOut('GETapi-orders--id-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-orders--id-"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/orders/{id}</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-orders--id-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-orders--id-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
- &nbsp;
- &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="id"                data-endpoint="GETapi-orders--id-"
-               value="1"
-               data-component="url">
-    <br>
-<p>The ID of the order. Example: <code>1</code></p>
-            </div>
-                    </form>
-
-                    <h2 id="endpoints-PUTapi-orders--id-">PUT api/orders/{id}</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-PUTapi-orders--id-">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request PUT \
-    "http://127.0.0.1:8081/api/orders/1" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json" \
-    --data "{
-    \"customer_id\": 1,
-    \"total\": 150.75,
-    \"status\": \"pending\"
-}"
-</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8081/api/orders/1"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "customer_id": 1,
-    "total": 150.75,
-    "status": "pending"
-};
-
-fetch(url, {
-    method: "PUT",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-PUTapi-orders--id-">
-</span>
-<span id="execution-results-PUTapi-orders--id-" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-PUTapi-orders--id-"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-PUTapi-orders--id-"
-      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-PUTapi-orders--id-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-PUTapi-orders--id-">
-
-Tip: Check that you&#039;re properly connected to the network.
-If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
-You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-PUTapi-orders--id-" data-method="PUT"
-      data-path="api/orders/{id}"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('PUTapi-orders--id-', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-PUTapi-orders--id-"
-                    onclick="tryItOut('PUTapi-orders--id-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-PUTapi-orders--id-"
-                    onclick="cancelTryOut('PUTapi-orders--id-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-PUTapi-orders--id-"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-darkblue">PUT</small>
-            <b><code>api/orders/{id}</code></b>
-        </p>
-            <p>
-            <small class="badge badge-purple">PATCH</small>
-            <b><code>api/orders/{id}</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="PUTapi-orders--id-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="PUTapi-orders--id-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
- &nbsp;
- &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="id"                data-endpoint="PUTapi-orders--id-"
-               value="1"
-               data-component="url">
-    <br>
-<p>The ID of the order. Example: <code>1</code></p>
-            </div>
-                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
-        <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>customer_id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
- &nbsp;
- &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="customer_id"                data-endpoint="PUTapi-orders--id-"
-               value="1"
-               data-component="body">
-    <br>
-<p>The ID of the customer placing the order. Example: <code>1</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>total</code></b>&nbsp;&nbsp;
-<small>number</small>&nbsp;
-<i>optional</i> &nbsp;
- &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="total"                data-endpoint="PUTapi-orders--id-"
-               value="150.75"
-               data-component="body">
-    <br>
-<p>The total amount of the order. Example: <code>150.75</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
-<i>optional</i> &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="status"                data-endpoint="PUTapi-orders--id-"
-               value="pending"
-               data-component="body">
-    <br>
-<p>The status of the order. Example: <code>pending</code></p>
-        </div>
-        </form>
-
-                    <h2 id="endpoints-DELETEapi-orders--id-">DELETE api/orders/{id}</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-DELETEapi-orders--id-">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request DELETE \
-    "http://127.0.0.1:8081/api/orders/1" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8081/api/orders/1"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "DELETE",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-DELETEapi-orders--id-">
-</span>
-<span id="execution-results-DELETEapi-orders--id-" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-DELETEapi-orders--id-"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-DELETEapi-orders--id-"
-      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-DELETEapi-orders--id-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-DELETEapi-orders--id-">
-
-Tip: Check that you&#039;re properly connected to the network.
-If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
-You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-DELETEapi-orders--id-" data-method="DELETE"
-      data-path="api/orders/{id}"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-orders--id-', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-DELETEapi-orders--id-"
-                    onclick="tryItOut('DELETEapi-orders--id-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-DELETEapi-orders--id-"
-                    onclick="cancelTryOut('DELETEapi-orders--id-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-DELETEapi-orders--id-"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-red">DELETE</small>
-            <b><code>api/orders/{id}</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="DELETEapi-orders--id-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="DELETEapi-orders--id-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
- &nbsp;
- &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="id"                data-endpoint="DELETEapi-orders--id-"
-               value="1"
-               data-component="url">
-    <br>
-<p>The ID of the order. Example: <code>1</code></p>
-            </div>
-                    </form>
-
                     <h2 id="endpoints-GETapi-order-items">GET api/order-items</h2>
 
 <p>
@@ -7018,58 +6272,95 @@ access-control-allow-origin: *
 
 <code class="language-json" style="max-height: 300px;">[
     {
-        &quot;id&quot;: 1,
+        &quot;id&quot;: 3,
         &quot;order_id&quot;: 1,
-        &quot;item_type&quot;: &quot;App\\Models\\Product&quot;,
+        &quot;item_type&quot;: &quot;service&quot;,
         &quot;item_id&quot;: 1,
-        &quot;quantity&quot;: 1,
-        &quot;unit_price&quot;: &quot;80.00&quot;,
-        &quot;meta&quot;: null,
-        &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
+        &quot;quantity&quot;: 101,
+        &quot;unit_price&quot;: 12,
+        &quot;meta&quot;: {
+            &quot;size&quot;: null,
+            &quot;doc_type&quot;: null,
+            &quot;material&quot;: null,
+            &quot;condition_value&quot;: null
+        },
+        &quot;created_at&quot;: &quot;2026-01-08T23:23:53.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2026-04-23T19:38:24.000000Z&quot;,
         &quot;order&quot;: {
             &quot;id&quot;: 1,
             &quot;customer_id&quot;: 1,
-            &quot;total&quot;: &quot;100.00&quot;,
+            &quot;total&quot;: 100,
             &quot;status&quot;: &quot;pending&quot;,
-            &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;
+            &quot;description&quot;: null,
+            &quot;photo_paths&quot;: null,
+            &quot;photo_links&quot;: null,
+            &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2026-01-05T20:11:32.000000Z&quot;
         },
         &quot;item&quot;: {
             &quot;id&quot;: 1,
-            &quot;name&quot;: &quot;Lapiz #10&quot;,
-            &quot;description&quot;: &quot;Eius et animi quos velit et.&quot;,
-            &quot;price&quot;: &quot;6.00&quot;,
-            &quot;stock&quot;: 14,
-            &quot;category&quot;: &quot;prod&quot;,
-            &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-29T21:13:06.000000Z&quot;
+            &quot;name&quot;: &quot;Impresi&oacute;n&quot;,
+            &quot;description&quot;: &quot;Impresi&oacute;n de documentos&quot;,
+            &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;
         }
     },
     {
-        &quot;id&quot;: 2,
+        &quot;id&quot;: 4,
         &quot;order_id&quot;: 2,
-        &quot;item_type&quot;: &quot;App\\Models\\Service&quot;,
+        &quot;item_type&quot;: &quot;service&quot;,
         &quot;item_id&quot;: 1,
-        &quot;quantity&quot;: 50,
-        &quot;unit_price&quot;: &quot;4.00&quot;,
+        &quot;quantity&quot;: 2,
+        &quot;unit_price&quot;: 12,
         &quot;meta&quot;: null,
-        &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
+        &quot;created_at&quot;: &quot;2026-01-08T23:59:53.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2026-01-08T23:59:53.000000Z&quot;,
         &quot;order&quot;: {
             &quot;id&quot;: 2,
             &quot;customer_id&quot;: 2,
-            &quot;total&quot;: &quot;200.00&quot;,
+            &quot;total&quot;: 200,
             &quot;status&quot;: &quot;completed&quot;,
-            &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;
+            &quot;description&quot;: null,
+            &quot;photo_paths&quot;: null,
+            &quot;photo_links&quot;: null,
+            &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;
         },
         &quot;item&quot;: {
             &quot;id&quot;: 1,
-            &quot;name&quot;: &quot;Impresion&quot;,
-            &quot;description&quot;: &quot;Servicios de impresion de documentos&quot;,
-            &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2025-12-30T04:45:42.000000Z&quot;
+            &quot;name&quot;: &quot;Impresi&oacute;n&quot;,
+            &quot;description&quot;: &quot;Impresi&oacute;n de documentos&quot;,
+            &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;
+        }
+    },
+    {
+        &quot;id&quot;: 5,
+        &quot;order_id&quot;: 1,
+        &quot;item_type&quot;: &quot;service&quot;,
+        &quot;item_id&quot;: 1,
+        &quot;quantity&quot;: 100,
+        &quot;unit_price&quot;: 2,
+        &quot;meta&quot;: null,
+        &quot;created_at&quot;: &quot;2026-04-23T18:38:44.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2026-04-23T18:38:44.000000Z&quot;,
+        &quot;order&quot;: {
+            &quot;id&quot;: 1,
+            &quot;customer_id&quot;: 1,
+            &quot;total&quot;: 100,
+            &quot;status&quot;: &quot;pending&quot;,
+            &quot;description&quot;: null,
+            &quot;photo_paths&quot;: null,
+            &quot;photo_links&quot;: null,
+            &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2026-01-05T20:11:32.000000Z&quot;
+        },
+        &quot;item&quot;: {
+            &quot;id&quot;: 1,
+            &quot;name&quot;: &quot;Impresi&oacute;n&quot;,
+            &quot;description&quot;: &quot;Impresi&oacute;n de documentos&quot;,
+            &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;
         }
     }
 ]</code>
@@ -7349,14 +6640,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8081/api/order-items/1" \
+    --get "http://127.0.0.1:8081/api/order-items/3" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8081/api/order-items/1"
+    "http://127.0.0.1:8081/api/order-items/3"
 );
 
 const headers = {
@@ -7385,32 +6676,37 @@ access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;id&quot;: 1,
+    &quot;id&quot;: 3,
     &quot;order_id&quot;: 1,
-    &quot;item_type&quot;: &quot;App\\Models\\Product&quot;,
+    &quot;item_type&quot;: &quot;service&quot;,
     &quot;item_id&quot;: 1,
-    &quot;quantity&quot;: 1,
-    &quot;unit_price&quot;: &quot;80.00&quot;,
-    &quot;meta&quot;: null,
-    &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-    &quot;updated_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
+    &quot;quantity&quot;: 101,
+    &quot;unit_price&quot;: 12,
+    &quot;meta&quot;: {
+        &quot;size&quot;: null,
+        &quot;doc_type&quot;: null,
+        &quot;material&quot;: null,
+        &quot;condition_value&quot;: null
+    },
+    &quot;created_at&quot;: &quot;2026-01-08T23:23:53.000000Z&quot;,
+    &quot;updated_at&quot;: &quot;2026-04-23T19:38:24.000000Z&quot;,
     &quot;order&quot;: {
         &quot;id&quot;: 1,
         &quot;customer_id&quot;: 1,
-        &quot;total&quot;: &quot;100.00&quot;,
+        &quot;total&quot;: 100,
         &quot;status&quot;: &quot;pending&quot;,
-        &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;
+        &quot;description&quot;: null,
+        &quot;photo_paths&quot;: null,
+        &quot;photo_links&quot;: null,
+        &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2026-01-05T20:11:32.000000Z&quot;
     },
     &quot;item&quot;: {
         &quot;id&quot;: 1,
-        &quot;name&quot;: &quot;Lapiz #10&quot;,
-        &quot;description&quot;: &quot;Eius et animi quos velit et.&quot;,
-        &quot;price&quot;: &quot;6.00&quot;,
-        &quot;stock&quot;: 14,
-        &quot;category&quot;: &quot;prod&quot;,
-        &quot;created_at&quot;: &quot;2025-12-23T17:02:53.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2025-12-29T21:13:06.000000Z&quot;
+        &quot;name&quot;: &quot;Impresi&oacute;n&quot;,
+        &quot;description&quot;: &quot;Impresi&oacute;n de documentos&quot;,
+        &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;
     }
 }</code>
  </pre>
@@ -7494,10 +6790,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="GETapi-order-items--id-"
-               value="1"
+               value="3"
                data-component="url">
     <br>
-<p>The ID of the order item. Example: <code>1</code></p>
+<p>The ID of the order item. Example: <code>3</code></p>
             </div>
                     </form>
 
@@ -7514,22 +6810,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://127.0.0.1:8081/api/order-items/1" \
+    "http://127.0.0.1:8081/api/order-items/3" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json" \
-    --data "{
-    \"order_id\": \"architecto\",
-    \"item_type\": \"architecto\",
-    \"item_id\": 16,
-    \"quantity\": 22,
-    \"unit_price\": 4326.41688
-}"
-</code></pre></div>
+    --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8081/api/order-items/1"
+    "http://127.0.0.1:8081/api/order-items/3"
 );
 
 const headers = {
@@ -7537,18 +6825,9 @@ const headers = {
     "Accept": "application/json",
 };
 
-let body = {
-    "order_id": "architecto",
-    "item_type": "architecto",
-    "item_id": 16,
-    "quantity": 22,
-    "unit_price": 4326.41688
-};
-
 fetch(url, {
     method: "PUT",
     headers,
-    body: JSON.stringify(body),
 }).then(response =&gt; response.json());</code></pre></div>
 
 </span>
@@ -7638,73 +6917,12 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="PUTapi-order-items--id-"
-               value="1"
+               value="3"
                data-component="url">
     <br>
-<p>The ID of the order item. Example: <code>1</code></p>
+<p>The ID of the order item. Example: <code>3</code></p>
             </div>
-                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
-        <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>order_id</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="order_id"                data-endpoint="PUTapi-order-items--id-"
-               value="architecto"
-               data-component="body">
-    <br>
-<p>The <code>id</code> of an existing record in the orders table. Example: <code>architecto</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>item_type</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="item_type"                data-endpoint="PUTapi-order-items--id-"
-               value="architecto"
-               data-component="body">
-    <br>
-<p>Example: <code>architecto</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>item_id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
- &nbsp;
- &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="item_id"                data-endpoint="PUTapi-order-items--id-"
-               value="16"
-               data-component="body">
-    <br>
-<p>Example: <code>16</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>quantity</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
- &nbsp;
- &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="quantity"                data-endpoint="PUTapi-order-items--id-"
-               value="22"
-               data-component="body">
-    <br>
-<p>Must be at least 1. Example: <code>22</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>unit_price</code></b>&nbsp;&nbsp;
-<small>number</small>&nbsp;
- &nbsp;
- &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="unit_price"                data-endpoint="PUTapi-order-items--id-"
-               value="4326.41688"
-               data-component="body">
-    <br>
-<p>Example: <code>4326.41688</code></p>
-        </div>
-        </form>
+                    </form>
 
                     <h2 id="endpoints-DELETEapi-order-items--id-">DELETE api/order-items/{id}</h2>
 
@@ -7719,14 +6937,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://127.0.0.1:8081/api/order-items/1" \
+    "http://127.0.0.1:8081/api/order-items/3" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8081/api/order-items/1"
+    "http://127.0.0.1:8081/api/order-items/3"
 );
 
 const headers = {
@@ -7822,10 +7040,1123 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="DELETEapi-order-items--id-"
+               value="3"
+               data-component="url">
+    <br>
+<p>The ID of the order item. Example: <code>3</code></p>
+            </div>
+                    </form>
+
+                <h1 id="orders">Orders</h1>
+
+    
+
+                                <h2 id="orders-GETapi-orders">List orders
+
+Returns all orders with customer and item relationships loaded.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-orders">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://127.0.0.1:8081/api/orders" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8081/api/orders"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-orders">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">[
+    {
+        &quot;id&quot;: 1,
+        &quot;customer_id&quot;: 1,
+        &quot;total&quot;: 100,
+        &quot;status&quot;: &quot;pending&quot;,
+        &quot;description&quot;: null,
+        &quot;photo_paths&quot;: null,
+        &quot;photo_links&quot;: null,
+        &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2026-01-05T20:11:32.000000Z&quot;,
+        &quot;customer&quot;: {
+            &quot;id&quot;: 1,
+            &quot;name&quot;: &quot;Juan P&eacute;rezito&quot;,
+            &quot;phone&quot;: &quot;555-123412&quot;,
+            &quot;email&quot;: &quot;juan12@example.com&quot;,
+            &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2026-01-05T16:03:39.000000Z&quot;
+        },
+        &quot;items&quot;: [
+            {
+                &quot;id&quot;: 3,
+                &quot;order_id&quot;: 1,
+                &quot;item_type&quot;: &quot;service&quot;,
+                &quot;item_id&quot;: 1,
+                &quot;quantity&quot;: 101,
+                &quot;unit_price&quot;: 12,
+                &quot;meta&quot;: {
+                    &quot;size&quot;: null,
+                    &quot;doc_type&quot;: null,
+                    &quot;material&quot;: null,
+                    &quot;condition_value&quot;: null
+                },
+                &quot;created_at&quot;: &quot;2026-01-08T23:23:53.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2026-04-23T19:38:24.000000Z&quot;,
+                &quot;item&quot;: {
+                    &quot;id&quot;: 1,
+                    &quot;name&quot;: &quot;Impresi&oacute;n&quot;,
+                    &quot;description&quot;: &quot;Impresi&oacute;n de documentos&quot;,
+                    &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;
+                }
+            },
+            {
+                &quot;id&quot;: 5,
+                &quot;order_id&quot;: 1,
+                &quot;item_type&quot;: &quot;service&quot;,
+                &quot;item_id&quot;: 1,
+                &quot;quantity&quot;: 100,
+                &quot;unit_price&quot;: 2,
+                &quot;meta&quot;: null,
+                &quot;created_at&quot;: &quot;2026-04-23T18:38:44.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2026-04-23T18:38:44.000000Z&quot;,
+                &quot;item&quot;: {
+                    &quot;id&quot;: 1,
+                    &quot;name&quot;: &quot;Impresi&oacute;n&quot;,
+                    &quot;description&quot;: &quot;Impresi&oacute;n de documentos&quot;,
+                    &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;
+                }
+            }
+        ]
+    },
+    {
+        &quot;id&quot;: 2,
+        &quot;customer_id&quot;: 2,
+        &quot;total&quot;: 200,
+        &quot;status&quot;: &quot;completed&quot;,
+        &quot;description&quot;: null,
+        &quot;photo_paths&quot;: null,
+        &quot;photo_links&quot;: null,
+        &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+        &quot;customer&quot;: {
+            &quot;id&quot;: 2,
+            &quot;name&quot;: &quot;Mar&iacute;a L&oacute;pez&quot;,
+            &quot;phone&quot;: &quot;555-5678&quot;,
+            &quot;email&quot;: &quot;maria@example.com&quot;,
+            &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;
+        },
+        &quot;items&quot;: [
+            {
+                &quot;id&quot;: 4,
+                &quot;order_id&quot;: 2,
+                &quot;item_type&quot;: &quot;service&quot;,
+                &quot;item_id&quot;: 1,
+                &quot;quantity&quot;: 2,
+                &quot;unit_price&quot;: 12,
+                &quot;meta&quot;: null,
+                &quot;created_at&quot;: &quot;2026-01-08T23:59:53.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2026-01-08T23:59:53.000000Z&quot;,
+                &quot;item&quot;: {
+                    &quot;id&quot;: 1,
+                    &quot;name&quot;: &quot;Impresi&oacute;n&quot;,
+                    &quot;description&quot;: &quot;Impresi&oacute;n de documentos&quot;,
+                    &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;
+                }
+            }
+        ]
+    }
+]</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-orders" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-orders"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-orders"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-orders" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-orders">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-orders" data-method="GET"
+      data-path="api/orders"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-orders', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-orders"
+                    onclick="tryItOut('GETapi-orders');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-orders"
+                    onclick="cancelTryOut('GETapi-orders');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-orders"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/orders</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-orders"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-orders"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="orders-POSTapi-orders">Create order
+
+Creates an order and optionally creates nested order items. If an item is a service,
+its price is resolved from pricing rules and product stock is discounted from related consumables.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-orders">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://127.0.0.1:8081/api/orders" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"customer_id\": 1,
+    \"status\": \"pending\",
+    \"total\": 150.75,
+    \"description\": \"100 impresiones en opalina.\",
+    \"photo_paths\": [
+        \"orders\\/photos\\/ref-1.jpg\"
+    ],
+    \"photo_links\": [
+        \"https:\\/\\/example.com\\/ref-1.jpg\"
+    ],
+    \"order_items\": [
+        \"architecto\"
+    ]
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8081/api/orders"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "customer_id": 1,
+    "status": "pending",
+    "total": 150.75,
+    "description": "100 impresiones en opalina.",
+    "photo_paths": [
+        "orders\/photos\/ref-1.jpg"
+    ],
+    "photo_links": [
+        "https:\/\/example.com\/ref-1.jpg"
+    ],
+    "order_items": [
+        "architecto"
+    ]
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-orders">
+            <blockquote>
+            <p>Example response (200, Order created):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;id&quot;: 1,
+    &quot;customer_id&quot;: 1,
+    &quot;total&quot;: 1000,
+    &quot;status&quot;: &quot;pending&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-orders" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-orders"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-orders"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-orders" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-orders">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-orders" data-method="POST"
+      data-path="api/orders"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-orders', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-orders"
+                    onclick="tryItOut('POSTapi-orders');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-orders"
+                    onclick="cancelTryOut('POSTapi-orders');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-orders"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/orders</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-orders"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-orders"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>customer_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="customer_id"                data-endpoint="POSTapi-orders"
+               value="1"
+               data-component="body">
+    <br>
+<p>The ID of the customer placing the order. Example: <code>1</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="status"                data-endpoint="POSTapi-orders"
+               value="pending"
+               data-component="body">
+    <br>
+<p>The status of the order. Example: <code>pending</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>total</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="total"                data-endpoint="POSTapi-orders"
+               value="150.75"
+               data-component="body">
+    <br>
+<p>The total amount of the order. Example: <code>150.75</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="description"                data-endpoint="POSTapi-orders"
+               value="100 impresiones en opalina."
+               data-component="body">
+    <br>
+<p>Optional order description. Example: <code>100 impresiones en opalina.</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>photo_paths</code></b>&nbsp;&nbsp;
+<small>string[]</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="photo_paths[0]"                data-endpoint="POSTapi-orders"
+               data-component="body">
+        <input type="text" style="display: none"
+               name="photo_paths[1]"                data-endpoint="POSTapi-orders"
+               data-component="body">
+    <br>
+<p>Optional uploaded image paths.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>photo_links</code></b>&nbsp;&nbsp;
+<small>string[]</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="photo_links[0]"                data-endpoint="POSTapi-orders"
+               data-component="body">
+        <input type="text" style="display: none"
+               name="photo_links[1]"                data-endpoint="POSTapi-orders"
+               data-component="body">
+    <br>
+<p>Optional image URLs.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+        <details>
+            <summary style="padding-bottom: 10px;">
+                <b style="line-height: 2;"><code>order_items</code></b>&nbsp;&nbsp;
+<small>string[]</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+<br>
+<p>Optional order items to create together with the order.</p>
+            </summary>
+                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>item_type</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="order_items.0.item_type"                data-endpoint="POSTapi-orders"
+               value="service"
+               data-component="body">
+    <br>
+<p>when sending items. Allowed values: product, service. Example: <code>service</code></p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>item_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="order_items.0.item_id"                data-endpoint="POSTapi-orders"
+               value="1"
+               data-component="body">
+    <br>
+<p>when sending items. Example: <code>1</code></p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>quantity</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="order_items.0.quantity"                data-endpoint="POSTapi-orders"
+               value="100"
+               data-component="body">
+    <br>
+<p>when sending items. Example: <code>100</code></p>
+                    </div>
+                                                                <div style=" margin-left: 14px; clear: unset;">
+        <details>
+            <summary style="padding-bottom: 10px;">
+                <b style="line-height: 2;"><code>meta</code></b>&nbsp;&nbsp;
+<small>object</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+<br>
+
+            </summary>
+                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>material</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="order_items.0.meta.material"                data-endpoint="POSTapi-orders"
+               value="opalina"
+               data-component="body">
+    <br>
+<p>Optional service selector. Example: <code>opalina</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>size</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="order_items.0.meta.size"                data-endpoint="POSTapi-orders"
+               value="carta"
+               data-component="body">
+    <br>
+<p>Optional service selector. Example: <code>carta</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>doc_type</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="order_items.0.meta.doc_type"                data-endpoint="POSTapi-orders"
+               value="contrato"
+               data-component="body">
+    <br>
+<p>Optional service selector. Example: <code>contrato</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>condition_value</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="order_items.0.meta.condition_value"                data-endpoint="POSTapi-orders"
+               value="opalina"
+               data-component="body">
+    <br>
+<p>Optional generic selector. Example: <code>opalina</code></p>
+                    </div>
+                                    </details>
+        </div>
+                                        </details>
+        </div>
+        </form>
+
+                    <h2 id="orders-GETapi-orders--id-">Show order
+
+Returns a single order with customer and items.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-orders--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://127.0.0.1:8081/api/orders/1" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8081/api/orders/1"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-orders--id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;id&quot;: 1,
+    &quot;customer_id&quot;: 1,
+    &quot;total&quot;: 100,
+    &quot;status&quot;: &quot;pending&quot;,
+    &quot;description&quot;: null,
+    &quot;photo_paths&quot;: null,
+    &quot;photo_links&quot;: null,
+    &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+    &quot;updated_at&quot;: &quot;2026-01-05T20:11:32.000000Z&quot;,
+    &quot;customer&quot;: {
+        &quot;id&quot;: 1,
+        &quot;name&quot;: &quot;Juan P&eacute;rezito&quot;,
+        &quot;phone&quot;: &quot;555-123412&quot;,
+        &quot;email&quot;: &quot;juan12@example.com&quot;,
+        &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2026-01-05T16:03:39.000000Z&quot;
+    },
+    &quot;items&quot;: [
+        {
+            &quot;id&quot;: 3,
+            &quot;order_id&quot;: 1,
+            &quot;item_type&quot;: &quot;service&quot;,
+            &quot;item_id&quot;: 1,
+            &quot;quantity&quot;: 101,
+            &quot;unit_price&quot;: 12,
+            &quot;meta&quot;: {
+                &quot;size&quot;: null,
+                &quot;doc_type&quot;: null,
+                &quot;material&quot;: null,
+                &quot;condition_value&quot;: null
+            },
+            &quot;created_at&quot;: &quot;2026-01-08T23:23:53.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2026-04-23T19:38:24.000000Z&quot;,
+            &quot;item&quot;: {
+                &quot;id&quot;: 1,
+                &quot;name&quot;: &quot;Impresi&oacute;n&quot;,
+                &quot;description&quot;: &quot;Impresi&oacute;n de documentos&quot;,
+                &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 5,
+            &quot;order_id&quot;: 1,
+            &quot;item_type&quot;: &quot;service&quot;,
+            &quot;item_id&quot;: 1,
+            &quot;quantity&quot;: 100,
+            &quot;unit_price&quot;: 2,
+            &quot;meta&quot;: null,
+            &quot;created_at&quot;: &quot;2026-04-23T18:38:44.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2026-04-23T18:38:44.000000Z&quot;,
+            &quot;item&quot;: {
+                &quot;id&quot;: 1,
+                &quot;name&quot;: &quot;Impresi&oacute;n&quot;,
+                &quot;description&quot;: &quot;Impresi&oacute;n de documentos&quot;,
+                &quot;created_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2025-12-31T18:55:55.000000Z&quot;
+            }
+        }
+    ]
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-orders--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-orders--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-orders--id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-orders--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-orders--id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-orders--id-" data-method="GET"
+      data-path="api/orders/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-orders--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-orders--id-"
+                    onclick="tryItOut('GETapi-orders--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-orders--id-"
+                    onclick="cancelTryOut('GETapi-orders--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-orders--id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/orders/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-orders--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-orders--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="id"                data-endpoint="GETapi-orders--id-"
                value="1"
                data-component="url">
     <br>
-<p>The ID of the order item. Example: <code>1</code></p>
+<p>The ID of the order. Example: <code>1</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="orders-PUTapi-orders--id-">Update order
+
+Updates order attributes. If `order_items` is sent, existing order items are replaced and stock is recalculated.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-PUTapi-orders--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "http://127.0.0.1:8081/api/orders/1" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"customer_id\": 1,
+    \"status\": \"pending\",
+    \"total\": 150.75,
+    \"description\": \"Eius et animi quos velit et.\",
+    \"order_items\": [
+        \"architecto\"
+    ]
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8081/api/orders/1"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "customer_id": 1,
+    "status": "pending",
+    "total": 150.75,
+    "description": "Eius et animi quos velit et.",
+    "order_items": [
+        "architecto"
+    ]
+};
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-orders--id-">
+</span>
+<span id="execution-results-PUTapi-orders--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-orders--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-orders--id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-PUTapi-orders--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-orders--id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-PUTapi-orders--id-" data-method="PUT"
+      data-path="api/orders/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-orders--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-orders--id-"
+                    onclick="tryItOut('PUTapi-orders--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-orders--id-"
+                    onclick="cancelTryOut('PUTapi-orders--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-orders--id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/orders/{id}</code></b>
+        </p>
+            <p>
+            <small class="badge badge-purple">PATCH</small>
+            <b><code>api/orders/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="PUTapi-orders--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="PUTapi-orders--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="id"                data-endpoint="PUTapi-orders--id-"
+               value="1"
+               data-component="url">
+    <br>
+<p>The ID of the order. Example: <code>1</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>customer_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="customer_id"                data-endpoint="PUTapi-orders--id-"
+               value="1"
+               data-component="body">
+    <br>
+<p>The ID of the customer placing the order. Example: <code>1</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="status"                data-endpoint="PUTapi-orders--id-"
+               value="pending"
+               data-component="body">
+    <br>
+<p>The status of the order. Example: <code>pending</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>total</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="total"                data-endpoint="PUTapi-orders--id-"
+               value="150.75"
+               data-component="body">
+    <br>
+<p>The total amount of the order. Example: <code>150.75</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="description"                data-endpoint="PUTapi-orders--id-"
+               value="Eius et animi quos velit et."
+               data-component="body">
+    <br>
+<p>Optional order description. Example: <code>Eius et animi quos velit et.</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>order_items</code></b>&nbsp;&nbsp;
+<small>string[]</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="order_items[0]"                data-endpoint="PUTapi-orders--id-"
+               data-component="body">
+        <input type="text" style="display: none"
+               name="order_items[1]"                data-endpoint="PUTapi-orders--id-"
+               data-component="body">
+    <br>
+<p>Optional full replacement of order items.</p>
+        </div>
+        </form>
+
+                    <h2 id="orders-DELETEapi-orders--id-">Delete order
+
+Deletes an order.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-orders--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "http://127.0.0.1:8081/api/orders/1" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8081/api/orders/1"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-orders--id-">
+</span>
+<span id="execution-results-DELETEapi-orders--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-orders--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-orders--id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-orders--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-orders--id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-DELETEapi-orders--id-" data-method="DELETE"
+      data-path="api/orders/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-orders--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-orders--id-"
+                    onclick="tryItOut('DELETEapi-orders--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-orders--id-"
+                    onclick="cancelTryOut('DELETEapi-orders--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-orders--id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/orders/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="DELETEapi-orders--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="DELETEapi-orders--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="id"                data-endpoint="DELETEapi-orders--id-"
+               value="1"
+               data-component="url">
+    <br>
+<p>The ID of the order. Example: <code>1</code></p>
             </div>
                     </form>
 

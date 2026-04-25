@@ -17,7 +17,7 @@ class ProductController extends Controller
      * @bodyParam description string The description of the product.
      * @bodyParam price float required The price of the product. Example: 6
      * @bodyParam stock integer required The stock quantity of the product. Example: 14
-     * @bodyParam category string The category of the product. Example: prod
+     * @bodyParam category_id integer The category ID of the product. Example: 1
      */
     public function store(Request $request)
     {
@@ -26,7 +26,7 @@ class ProductController extends Controller
             'description' => 'nullable|string',
             'price' => 'required|numeric',
             'stock' => 'required|integer',
-            'category' => 'nullable|string',
+            'category_id' => 'nullable|exists:categories,id',
         ]);
 
         $product = Product::create($validated);
@@ -43,7 +43,7 @@ class ProductController extends Controller
      * @bodyParam description string The description of the product.
      * @bodyParam price float required The price of the product. Example: 6
      * @bodyParam stock integer required The stock quantity of the product. Example: 14
-     * @bodyParam category string The category of the product. Example: prod
+     * @bodyParam category_id integer The category ID of the product. Example: 1
      */
     public function update(Request $request, Product $product)
     {
@@ -52,7 +52,7 @@ class ProductController extends Controller
             'description' => 'nullable|string',
             'price' => 'required|numeric',
             'stock' => 'required|integer',
-            'category' => 'nullable|string',
+            'category_id' => 'nullable|exists:categories,id',
         ]);
         $product->update($validated);
         return $product->load('bundleItems');
